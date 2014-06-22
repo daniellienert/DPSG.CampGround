@@ -1,0 +1,17 @@
+
+
+prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Story.html'
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+
+		@cache.mode = 'cached'
+	}
+}
+
+prototype(TYPO3.Neos:PrimaryContent).story {
+
+	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
+	type = 'DPSG.CampGround:Story'
+}

@@ -1,0 +1,84 @@
+
+
+
+
+'DPSG.CampGround:Story':
+  superTypes: ['TYPO3.Neos:Document']
+
+  childNodes:
+    'main':
+      type: 'TYPO3.Neos:ContentCollection'
+
+  ui:
+    label: 'Story'
+    icon: 'icon-calendar'
+    inspector:
+      groups:
+        storyProperties:
+          label: 'Story Properties'
+          position: 1
+
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+
+    storyStartDate:
+      type: date
+      ui:
+        reloadIfChanged: FALSE
+        label: 'Story Start Date'
+        inspector:
+          group: 'storyProperties'
+
+    storyEndDate:
+      type: date
+      ui:
+        reloadIfChanged: FALSE
+        label: 'Story End Date'
+        inspector:
+          group: 'storyProperties'
+
+    groupType:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Stufe'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'storyProperties'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              woelflinge:
+                label: 'Wölflinge'
+              jungpfadfinder:
+                label: 'Jungpfadfinder'
+              pfadfinder:
+                label: 'Pfadfinder'
+              rover:
+                label: 'Rover'
+              leiter:
+                label: 'Leiter'
+
+    'storyHeaderImage':
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: 'Story Header Image'
+        reloadIfChanged: true
+        inspector:
+          group: 'storyProperties'
+
+
+'DPSG.CampGround:YearOverview':
+  superTypes: ['TYPO3.Neos:Document']
+
+  ui:
+    label: 'Year Overview'
+    icon: 'icon-align-justify'
