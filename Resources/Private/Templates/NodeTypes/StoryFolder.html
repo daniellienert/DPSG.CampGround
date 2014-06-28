@@ -6,18 +6,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Coffee Roasting Events (Hot, Hot, Hot)</h1>
+				<h1>{title}</h1>
 			</div>
 		</div>
 		<div class="row">
 			<typo3cr:widget.paginate nodes="{stories}" as="paginatedStories" configuration="{itemsPerPage: 3}">
 				<f:for each="{paginatedStories}" as="story">
-					<ts:render path="storyRenderer" context="{node: event}" />
+					<ts:render path="storyRenderer" context="{node: story}" />
 					<f:section name="singleStory">
-						<div class="article-list-element">
-							<h2>{title}</h2>
-							<p>{eventDate -> f:format.date()}</p>
-							<p><a class="btn btn-default" href="{neos:uri.node(node: node)}">Details about this</a></p>
+						<div class="infobox">
+							<h2><a href="{neos:uri.node(node: node)}">{title}</a></h2>
+							<p>Von: {storyStartDate -> f:format.date()} Bis: {storyEndDate -> f:format.date()}</p>
 						</div>
 					</f:section>
 				</f:for>

@@ -52,19 +52,19 @@
           group: 'storyProperties'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            placeholder: 'Default'
+            placeholder: 'Keine Stufe gewählt'
             values:
               '':
                 label: ''
-              woelflinge:
+              Woelflinge:
                 label: 'Wölflinge'
-              jungpfadfinder:
+              Jungpfadfinder:
                 label: 'Jungpfadfinder'
-              pfadfinder:
+              Pfadfinder:
                 label: 'Pfadfinder'
-              rover:
+              Rover:
                 label: 'Rover'
-              leiter:
+              Leiter:
                 label: 'Leiter'
 
     'storyHeaderImage':
@@ -76,9 +76,9 @@
           group: 'storyProperties'
 
 
-'DPSG.CampGround:YearOverview':
+'DPSG.CampGround:StoryFolder':
   superTypes: ['TYPO3.Neos:Document']
 
   ui:
-    label: 'Year Overview'
+    label: 'Story Folder'
     icon: 'icon-align-justify'

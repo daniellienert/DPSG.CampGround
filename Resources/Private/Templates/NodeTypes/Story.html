@@ -5,7 +5,10 @@
 			<neos:contentElement.editable property="title" tag="span" />
 		</h1>
 		<div>
-			Start: {storyStartDate -> f:format.date()}
+			Von: {storyStartDate -> f:format.date()} Bis: {storyEndDate -> f:format.date()}
+		</div>
+		<div>
+			Stufe: {groupType}
 		</div>
 
 

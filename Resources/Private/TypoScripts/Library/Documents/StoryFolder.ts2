@@ -4,7 +4,7 @@ prototype(DPSG.CampGround:StoryFolder) < prototype(TYPO3.TypoScript:Template) {
 
 	stories = ${q(node).children('[instanceof DPSG.CampGround:Story]').get()}
 
-	eventRenderer = TYPO3.TypoScript:Case {
+	storyRenderer = TYPO3.TypoScript:Case {
 
 		default {
 			@position = 'end 9999'
@@ -15,7 +15,9 @@ prototype(DPSG.CampGround:StoryFolder) < prototype(TYPO3.TypoScript:Template) {
 				sectionName = 'singleStory'
 
 				title = ${q(node).property('title')}
-				eventDate = ${q(node).property('eventDate')}
+				storyStartDate = ${q(node).property('storyStartDate')}
+				storyEndDate = ${q(node).property('storyEndDate')}
+				groupType = ${q(node).property('groupType')}
 
 				node = ${node}
 			}

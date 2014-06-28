@@ -4,7 +4,7 @@
 <html>
 <head>
 	<f:section name="stylesheets">
-		<!-- Put your stylesheet inclusions here, they will be included in your website by TypoScript -->
+		<link rel="stylesheet" href="Resources/Public/Css/main.css">
 	</f:section>
 	<f:section name="headScripts">
 		<!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
@@ -12,7 +12,7 @@
 </head>
 <body>
 <f:section name="body">
-
+	<f:render partial="Header" />
 	{parts.menu -> f:format.raw()}
 
 	<div class="content">
