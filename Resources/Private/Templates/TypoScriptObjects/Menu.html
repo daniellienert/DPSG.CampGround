@@ -1,26 +1,25 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-
-
-<nav class="sticky_navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
-		<div class="navbar">
-			<div class="nav-collapse collapse dropdown">
-				<ul class="nav navMain">
-					<f:render section="itemsList" arguments="{items: items}" />
-				</ul>
-			</div>
+		<div class="navbar-header">
+			<ul class="nav navbar-nav">
+				<f:render section="itemsList" arguments="{items: items}" />
+			</ul>
 		</div>
 	</div>
-</nav>
+</div>
+
 
 <f:section name="itemsList">
 	<f:for each="{items}" as="item">
+
 		<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
 		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+
 		<f:if condition="{item.subItems}">
-			<ul>
+			<ul class="nav navbar-nav">
 				<f:render section="itemsList" arguments="{items: item.subItems}" />
 			</ul>
 		</f:if>

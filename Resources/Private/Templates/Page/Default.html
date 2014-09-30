@@ -4,7 +4,7 @@
 <html>
 <head>
 	<f:section name="stylesheets">
-		<link rel="stylesheet" href="Resources/Public/Css/main.css">
+		<link rel="stylesheet" href="Resources/Public/Styles/Main.css">
 	</f:section>
 	<f:section name="headScripts">
 		<!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
@@ -20,7 +20,8 @@
 	</div>
 </f:section>
 <f:section name="bodyScripts">
-	<!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
+	<script src="{f:uri.resource(path: 'JavaScript/libs.min.js', package: 'DPSG.CampGround')}"></script>
+	<script src="{f:uri.resource(path: 'JavaScript/app.min.js', package: 'DPSG.CampGround')}"></script>
 </f:section>
 </body>
 </html>
