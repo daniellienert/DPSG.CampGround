@@ -1,0 +1,19 @@
+{
+  "name": "Private",
+  "version": "0.0.0",
+  "homepage": "https://github.com/daniellienert/DPSG.CampGround",
+  "authors": [
+    "Daniel Lienert <lienert@punkt.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.0.2"
+  }
+}
