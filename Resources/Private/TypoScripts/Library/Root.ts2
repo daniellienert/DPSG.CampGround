@@ -27,6 +27,7 @@ page = Page {
 				templatePath = 'resource://DPSG.CampGround/Private/Templates/TypoScriptObjects/Menu.html'
 
 				entryLevel = 1
+				maximumLevels = 2
 
 				attributes.class = 'nav navbar-nav'
 				current.attributes.class = 'active'
