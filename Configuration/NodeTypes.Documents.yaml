@@ -1,6 +1,24 @@
+##
+# Document NodeType "StoryList"
+#
+'DPSG.CampGround:StoryList':
+  superTypes: ['TYPO3.Neos:Document']
 
+  ui:
+    label: 'Story List'
+    icon: 'icon-list-alt'
+  properties:
+    sourceNode:
+      type: reference
+      ui:
+        label: 'Page containing the blog entries for the feed'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
 
-
+##
+# Document NodeType "Story"
+#
 
 'DPSG.CampGround:Story':
   superTypes: ['TYPO3.Neos:Document']
@@ -66,6 +84,8 @@
                 label: 'Rover'
               Leiter:
                 label: 'Leiter'
+    entrySummary:
+      type: string
 
     'storyHeaderImage':
       type: 'TYPO3\Media\Domain\Model\ImageVariant'
@@ -75,10 +95,3 @@
         inspector:
           group: 'storyProperties'
 
-
-'DPSG.CampGround:StoryFolder':
-  superTypes: ['TYPO3.Neos:Document']
-
-  ui:
-    label: 'Story Folder'
-    icon: 'icon-align-justify'

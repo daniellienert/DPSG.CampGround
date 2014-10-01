@@ -1,0 +1,57 @@
+prototype(DPSG.CampGround:StoryListContent) < prototype(Neos:Content) {
+	sectionName = 'feed'
+
+	node = ${node}
+
+	@override {
+		requestFormat = ${request.format}
+	}
+
+	templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/StoryList.xml' + requestFormat}
+
+	title = ${q(node).property('title')}
+	storyStartDate = ${q(node).property('storyStartDate')}
+	storyEndDate = ${q(node).property('storyEndDate')}
+	groupType = ${q(node).property('groupType')}
+
+	@cache {
+		mode = 'cached'
+		entryIdentifier.documentNode = ${documentNode}
+		// Flush the blog feed when a blog entry is changed
+		entryTags.1 = 'NodeType_DPSG.CampGround:Story'
+	}
+
+	entries = TypoScript:Collection {
+		sourceNode = ${q(node).property('sourceNode')}
+		collection = ${q(this.sourceNode).children('[instanceof DPSG.CampGround:Story]')}
+
+		itemName = 'node'
+		itemRenderer = DPSG.CampGround:Story {
+			templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/Story.xml' + requestFormat}
+		}
+	}
+}
+
+prototype(DPSG.CampGround:StoryListFeed) >
+prototype(DPSG.CampGround:StoryListFeed) < prototype(TypoScript:Array) {
+	doctype = '<?xml version="1.0" encoding="utf-8"?>'
+	doctype.@position = 'start 100'
+
+	feed = DPSG.CampGround:StoryListContent {
+		@position = 'after doctype'
+	}
+}
+
+##
+# Html version of the blog feed
+# It's just for rendering the primary content part and not the whole page.
+# This way it will integrate easily into an existing layout.
+#
+prototype(DPSG.CampGround:StoryListHtml) < prototype(DPSG.CampGround:StoryListContent) {
+	attributes.class = 'blog-feed'
+}
+
+##
+# Calling a page with the format .atom will automatically call the xml based layout
+#
+atom = DPSG.CampGround:StoryListFeed

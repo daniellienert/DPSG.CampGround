@@ -3,7 +3,7 @@
  */
 
 include: Documents/Story.ts2
-include: Documents/StoryFolder.ts2
+include: Documents/StoryList.ts2
 
 page = Page {
 	head {
