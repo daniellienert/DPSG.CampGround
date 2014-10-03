@@ -18,12 +18,13 @@
 		<div class="container">
 			{content.main -> f:format.raw()}
 		</div>
+
+		<f:render partial="Footer" arguments="{_all}"/>
 	</f:section>
+
 	<f:section name="bodyScripts">
 		<script src="{f:uri.resource(path: 'JavaScript/libs.min.js', package: 'DPSG.CampGround')}"></script>
 		<script src="{f:uri.resource(path: 'JavaScript/app.min.js', package: 'DPSG.CampGround')}"></script>
 	</f:section>
-
-	<f:render partial="Footer" arguments="{_all}"/>
 </body>
 </html>

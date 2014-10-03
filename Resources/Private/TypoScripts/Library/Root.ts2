@@ -1,6 +1,6 @@
 /**
- * Root TypoScript template for the Camp Site site
- */
+* Root TypoScript template for the Camp Site site
+*/
 
 include: Documents/Story.ts2
 include: Documents/StoryList.ts2
@@ -38,8 +38,14 @@ page = Page {
 			breadcrumb = Breadcrumb
 		}
 
-		siteTitle = ${q(site).property('siteTitle')}
 		site = ${site}
+
+		siteTitle = ${q(site).property('siteTitle')}
+
+		footer = TYPO3.Neos:ContentCollection {
+			nodePath = ${q(site).find('footer').property('_path')}
+			collection = ${q(site).children('footer').children()}
+		}
 
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {

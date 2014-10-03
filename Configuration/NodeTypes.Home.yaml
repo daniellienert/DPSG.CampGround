@@ -2,9 +2,12 @@
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
   ui:
     label: 'Homepage'
+  childNodes:
+    footer:
+      type: 'TYPO3.Neos:ContentCollection'
   properties:
     siteTitle:
       type: 'string'
-      defaultValue: 'test'
+      defaultValue: 'Der Seitentitel'
       ui:
         inlineEditable: TRUE

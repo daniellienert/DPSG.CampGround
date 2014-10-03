@@ -1,4 +1,4 @@
-prototype(DPSG.CampGround:StoryListContent) < prototype(Neos:Content) {
+prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 	sectionName = 'feed'
 
 	node = ${node}
@@ -7,7 +7,7 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Neos:Content) {
 		requestFormat = ${request.format}
 	}
 
-	templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/StoryList.xml' + requestFormat}
+	templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/StoryList.' + requestFormat}
 
 	title = ${q(node).property('title')}
 	storyStartDate = ${q(node).property('storyStartDate')}
@@ -21,13 +21,13 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Neos:Content) {
 		entryTags.1 = 'NodeType_DPSG.CampGround:Story'
 	}
 
-	entries = TypoScript:Collection {
+	entries = TYPO3.TypoScript:Collection {
 		sourceNode = ${q(node).property('sourceNode')}
-		collection = ${q(this.sourceNode).children('[instanceof DPSG.CampGround:Story]')}
+		collection = ${q(this.sourceNode).find('[instanceof DPSG.CampGround:Story]')}
 
 		itemName = 'node'
 		itemRenderer = DPSG.CampGround:Story {
-			templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/Story.xml' + requestFormat}
+			templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/Story.' + requestFormat}
 		}
 	}
 }
@@ -49,6 +49,11 @@ prototype(DPSG.CampGround:StoryListFeed) < prototype(TypoScript:Array) {
 #
 prototype(DPSG.CampGround:StoryListHtml) < prototype(DPSG.CampGround:StoryListContent) {
 	attributes.class = 'blog-feed'
+}
+
+prototype(TYPO3.Neos:PrimaryContent).StoryList {
+	condition = ${q(node).is('[instanceof DPSG.CampGround:StoryList]')}
+	type = 'DPSG.CampGround:StoryListHtml'
 }
 
 ##

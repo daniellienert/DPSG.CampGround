@@ -10,7 +10,7 @@ prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
 	}
 }
 
-prototype(TYPO3.Neos:PrimaryContent).story {
+prototype(TYPO3.Neos:PrimaryContent).Story {
 
 	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
 	type = 'DPSG.CampGround:Story'
