@@ -11,7 +11,7 @@
     sourceNode:
       type: reference
       ui:
-        label: 'Page containing the blog entries for the feed'
+        label: 'Liste an Einträgen'
         reloadIfChanged: TRUE
         inspector:
           group: 'document'

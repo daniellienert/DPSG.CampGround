@@ -1,0 +1,10 @@
+'DPSG.CampGround::HomePage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    label: 'Homepage'
+  properties:
+    siteTitle:
+      type: 'string'
+      defaultValue: 'test'
+      ui:
+        inlineEditable: TRUE

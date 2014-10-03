@@ -100,7 +100,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('dist', ['build:dist']);
 
-	grunt.registerTask('w', ['dev', 'watch']);
+	grunt.registerTask('w', ['watch']);
 
 	// Build task.
 	grunt.registerTask('build', 'The general build tasks. No arguments builds everything, you can use :dist and :angular', function(argument) {

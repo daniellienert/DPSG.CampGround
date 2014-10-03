@@ -1,0 +1,20 @@
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+	display: block;
+  }
+}
+
+.nav {
+  li {
+  	font-size: 1.4em;
+	font-family: $font-alternative;
+  }
+}
+
+.nav-pills {
+  li {
+	background-color: white;
+	font-color: $dpsg-blue;
+  }
+}
+

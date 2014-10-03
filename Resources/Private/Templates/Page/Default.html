@@ -11,17 +11,19 @@
 	</f:section>
 </head>
 <body>
-<f:section name="body">
-	<f:render partial="Header" />
-	<!--{parts.menu -> f:format.raw()}-->
+	<f:section name="body">
+		<f:render partial="Header" arguments="{_all}"/>
+		{parts.menu -> f:format.raw()}
 
-	<div class="content">
-		{content.main -> f:format.raw()}
-	</div>
-</f:section>
-<f:section name="bodyScripts">
-	<script src="{f:uri.resource(path: 'JavaScript/libs.min.js', package: 'DPSG.CampGround')}"></script>
-	<script src="{f:uri.resource(path: 'JavaScript/app.min.js', package: 'DPSG.CampGround')}"></script>
-</f:section>
+		<div class="container">
+			{content.main -> f:format.raw()}
+		</div>
+	</f:section>
+	<f:section name="bodyScripts">
+		<script src="{f:uri.resource(path: 'JavaScript/libs.min.js', package: 'DPSG.CampGround')}"></script>
+		<script src="{f:uri.resource(path: 'JavaScript/app.min.js', package: 'DPSG.CampGround')}"></script>
+	</f:section>
+
+	<f:render partial="Footer" arguments="{_all}"/>
 </body>
 </html>

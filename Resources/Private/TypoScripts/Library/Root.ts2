@@ -4,6 +4,8 @@
 
 include: Documents/Story.ts2
 include: Documents/StoryList.ts2
+include: Documents/PageElements.ts2
+include: Documents/BootstrapAdjustments.ts2
 
 page = Page {
 	head {
@@ -35,6 +37,10 @@ page = Page {
 
 			breadcrumb = Breadcrumb
 		}
+
+		siteTitle = ${q(site).property('siteTitle')}
+		site = ${site}
+
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
 			// The default content section
@@ -49,3 +55,6 @@ page = Page {
 		}
 	}
 }
+
+
+prototype(TYPO3.Neos.NodeTypes:Menu).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'

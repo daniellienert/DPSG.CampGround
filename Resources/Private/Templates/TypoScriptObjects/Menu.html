@@ -1,9 +1,9 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default" role="navigation">
 	<div class="container">
-		<div class="navbar-header">
+		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<f:render section="itemsList" arguments="{items: items}" />
 			</ul>
@@ -14,16 +14,20 @@
 
 <f:section name="itemsList">
 	<f:for each="{items}" as="item">
-
-		<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
-		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-
 		<f:if condition="{item.subItems}">
-			<ul class="nav navbar-nav">
-				<f:render section="itemsList" arguments="{items: item.subItems}" />
-			</ul>
+			<f:then>
+				<li class="dropdown">
+					<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+					<ul class="dropdown-menu">
+						<f:render section="itemsList" arguments="{items: item.subItems}" />
+					</ul>
+				</li>
+			</f:then>
+			<f:else>
+				<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+					<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+				</li>
+			</f:else>
 		</f:if>
-
-		</li>
 	</f:for>
 </f:section>
