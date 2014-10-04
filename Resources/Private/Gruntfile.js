@@ -25,7 +25,8 @@ module.exports = function (grunt) {
 			js: {
 				libs: [
 					'bower_components/jquery/dist/jquery.min.js',
-					'bower_components/bootstrap_sass/js/dropdown.js'
+					'bower_components/bootstrap_sass/js/dropdown.js',
+					'bower_components/magnific_popup/js/magnigic-popup.js'
 				]
 			}
 		},
