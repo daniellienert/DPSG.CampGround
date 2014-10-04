@@ -51,3 +51,23 @@
                 label: '25% / 50% / 25%'
               '3-3-6':
                 label: '25% / 25% / 50%'
+
+##
+# Adjust the "FourColumn" node type:
+# Disable some of the layout options, override labels and set the default layout
+#
+##
+# Adjust the "FourColumn" node type:
+# Disable some of the layout options, override labels and set the default layout
+#
+'TYPO3.Neos.NodeTypes:FourColumn':
+  properties:
+    'layout':
+      defaultValue: '3-3-3-3'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '25-25-25-25': ~
+              '3-3-3-3':
+                label: '25% / 25% / 25% / 25%'

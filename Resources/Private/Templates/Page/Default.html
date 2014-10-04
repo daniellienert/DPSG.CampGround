@@ -5,6 +5,9 @@
 <head>
 	<f:section name="stylesheets">
 		<link rel="stylesheet" href="Resources/Public/Styles/Main.css">
+        <f:if condition="{node.context.workspace.name} != 'live'">
+            <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Backend.css', package: 'DPSG.CampGround')}" media="all" />
+        </f:if>
 	</f:section>
 	<f:section name="headScripts">
 		<!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->

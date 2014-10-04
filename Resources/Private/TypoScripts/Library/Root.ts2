@@ -64,3 +64,4 @@ page = Page {
 
 
 prototype(TYPO3.Neos.NodeTypes:Menu).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'
+prototype(TYPO3.Neos.NodeTypes:Image).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Image.html'

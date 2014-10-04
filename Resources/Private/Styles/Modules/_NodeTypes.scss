@@ -1,0 +1,20 @@
+.typo3-neos-nodetypes-textwithimage, .typo3-neos-nodetypes-image {
+
+  img {
+    border: 5px solid white;
+  }
+
+  .typo3-neos-alignment-left {
+    float: left;
+    margin: 7px 7px 7px 0;
+  }
+
+  .typo3-neos-alignment-right {
+    float: right;
+    margin: 7px 0 7px 7px;
+  }
+}
+
+.typo3-neos-nodetypes-fourcolumn {
+  margin-bottom: 10px;
+}
