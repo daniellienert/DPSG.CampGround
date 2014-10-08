@@ -1,0 +1,87 @@
+# Original by Dominique Feyer https://gist.github.com/dfeyer/7047160
+
+'DPSG.CampGround:GoogleMap':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    group: 'general'
+    icon: 'icon-map-marker'
+    label: 'Google Map'
+    inspector:
+      groups:
+        googlemaps:
+          label: 'Google Map'
+          position: '1'
+  properties:
+    longitude:
+      type: string
+      defaultValue: '46.526448'
+      ui:
+        label: 'Longitude:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    latitude:
+      type: string
+      defaultValue: '6.631185'
+      ui:
+        label: 'Latitude:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    zoomlevel:
+      type: string
+      defaultValue: '10'
+      ui:
+        label: 'Zoomlevel 1-20'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    infoheadl:
+      type: string
+      defaultValue: 'Headline'
+      ui:
+        label: 'Infowindow Headline'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    infotext:
+      type: string
+      defaultValue: 'Text'
+      ui:
+        label: 'Infowindow Text'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    width:
+      type: string
+      defaultValue: '100%'
+      ui:
+        label: 'Width:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    height:
+      type: string
+      defaultValue: '400px'
+      ui:
+        label: 'Height:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    popupHeight:
+      type: string
+      defaultValue: '70px'
+      ui:
+        label: 'Infowindow Height:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'
+    popupWidth:
+      type: string
+      defaultValue: '220px'
+      ui:
+        label: 'Infowindow Width:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'googlemaps'

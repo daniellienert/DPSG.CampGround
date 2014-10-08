@@ -1,0 +1,14 @@
+prototype(DPSG.CampGround:GoogleMap) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/GoogleMap.html'
+
+    node = ${node}
+    longitude = ${q(node).property('longitude')}
+    latitude = ${q(node).property('latitude')}
+    zoomlevel = ${q(node).property('zoomlevel')}
+    infoheadl = ${q(node).property('infoheadl')}
+    infotext = ${q(node).property('infotext')}
+    width = ${q(node).property('width')}
+    height = ${q(node).property('height')}
+    popupHeight = ${q(node).property('popupHeight')}
+    popupWidth = ${q(node).property('popupWidth')}
+}

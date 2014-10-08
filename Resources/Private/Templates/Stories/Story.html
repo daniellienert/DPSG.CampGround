@@ -9,12 +9,26 @@
 				{neos:contentElement.editable(property: 'title')}
 			</h1>
 		</neos:contentElement.wrap>
-
-		<neos:contentElement.wrap node="{node}">
-			<summary>
-				{neos:contentElement.editable(property: 'entrySummary')}
-			</summary>
-		</neos:contentElement.wrap>
+			<div class="story-meta">
+				<div class="row">
+					<div class="col-md-4">
+						<p>Stufe: {groupType}</p>
+					</div>
+					<div class="col-md-4">
+						<p>
+							<f:if condition="{node.properties.storyEndDate}">
+								<f:then>Von: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}</f:then>
+								<f:else>Am: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
+							</f:if>
+						</p>
+					</div>
+					<f:if condition="{node.properties.author}">
+						<div class="col-md-4">
+							<p>Autor: {node.properties.author}</p>
+						</div>
+					</f:if>
+				</div>
+			</div>
 	</header>
 
 	<f:if condition="{node.properties.entryImage}">

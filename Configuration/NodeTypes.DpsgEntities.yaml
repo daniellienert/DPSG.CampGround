@@ -1,0 +1,14 @@
+'DPSG.CampGround::Stufe':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    label: 'Stufe'
+    icon: 'user'
+
+'DPSG.CampGround::Mitglied':
+  superTypes: ['TYPO3.Neos:Document']
+  ui:
+    label: 'Mitglied'
+    icon: 'user'
+  childNodes:
+    firstNme:
+      type: 'TYPO3.Neos:ContentCollection'

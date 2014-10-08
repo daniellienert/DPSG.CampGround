@@ -1,0 +1,46 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<neos:contentElement node="{node}">
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script>
+		<![CDATA[
+		function initializeMap]]>{node.name}<![CDATA[() {
+			var myLatlng = new google.maps.LatLng(]]>{longitude}<![CDATA[,]]>{latitude}<![CDATA[);
+			var mapOptions = {
+				zoom: ]]>{zoomlevel}<![CDATA[,
+				center: myLatlng,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+			var contentString = '<div id="content" style="height: ]]>{popupHeight}<![CDATA[; width: ]]>{popupWidth}<![CDATA[">'+
+					'<div id="siteNotice">'+
+					'</div>'+
+					'<h1 id="firstHeading" class="firstHeading">]]>{infoheadl}<![CDATA[</h1>'+
+					'<div id="bodyContent">'+
+					'<p>]]> <f:format.raw>{infotext}</f:format.raw> <![CDATA[</p>'+
+					'</div>'+
+					'</div>';
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title: 'InspiringFlow'
+			});
+
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
+			});
+		}
+
+		$(document).ready(function() {
+			initializeMap]]>{node.name}<![CDATA[();
+		});
+		]]>
+	</script>
+	<div id="map_canvas" style="height: {height}; width: {width}; margin-top: 20px;">
+	</div>
+
+</neos:contentElement>

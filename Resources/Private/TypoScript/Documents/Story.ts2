@@ -1,0 +1,29 @@
+
+
+prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://DPSG.CampGround/Private/Templates/Stories/Story.html'
+
+    # Fall back to modified date if there is no publication date set
+    publicationDate = ${node.properties.publicationDate ? node.properties.publicationDate : node.properties.lastModified}
+
+    groupType = ${node.properties.groupType ? node.properties.groupType : 'Alle'}
+
+    dateFormat = 'd.m.Y'
+
+    node = ${node}
+
+    content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+		@cache.mode = 'cached'
+	}
+
+    // Links to previous and next stories
+    previousStory = ${q(node).prev('[instanceof DPSG.CampGround:Story]').get(0)}
+    nextStory = ${q(node).next('[instanceof DPSG.CampGround:Story]').get(0)}
+}
+
+prototype(TYPO3.Neos:PrimaryContent).Story {
+
+	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
+	type = 'DPSG.CampGround:Story'
+}

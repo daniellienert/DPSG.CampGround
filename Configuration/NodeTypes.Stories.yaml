@@ -48,7 +48,7 @@
       type: date
       ui:
         reloadIfChanged: FALSE
-        label: 'Story Start Date'
+        label: 'Startdatum'
         inspector:
           group: 'storyProperties'
 
@@ -56,7 +56,7 @@
       type: date
       ui:
         reloadIfChanged: FALSE
-        label: 'Story End Date'
+        label: 'Enddatum'
         inspector:
           group: 'storyProperties'
 
@@ -84,8 +84,14 @@
                 label: 'Rover'
               Leiter:
                 label: 'Leiter'
-    entrySummary:
+
+    author:
       type: string
+      ui:
+        reloadIfChanged: FALSE
+        label: 'Autor'
+        inspector:
+          group: 'storyProperties'
 
     'storyHeaderImage':
       type: 'TYPO3\Media\Domain\Model\ImageVariant'
