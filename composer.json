@@ -1,7 +1,7 @@
 {
-    "name": "dpsg/campsite",
+    "name": "dpsg/campground",
     "type": "typo3-flow-site",
-    "description": "Add description here",
+    "description": "Neos site package providing a basis for dpsg pages.",
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*"
@@ -12,3 +12,5 @@
         }
     }
 }
+
+
