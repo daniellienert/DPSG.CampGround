@@ -8,7 +8,32 @@ $navbar-default-link-hover-color:	white;
 
 $body-bg:							#f0f4f6;
 
-$font-family-sans-serif:			'Arial, Helvetica', sans-serif;
-$font-size-base:                    16px;
-$line-height-base:                  1.5;
-$font-alternative: 					'Merriweather', Georgia, serif;
+
+
+// Typography
+// -------------------------
+
+$font-family-sans-serif:  'Arial, Helvetica', sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-alternative: 		  'Merriweather', Georgia, serif;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          16px;
+$font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
+$font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
+
+$font-size-h1:            floor($font-size-base * 2.6) !default; // ~36px
+$font-size-h2:            floor($font-size-base * 2.15) !default; // ~30px
+$font-size-h3:            ceil($font-size-base * 1.4) !default; // ~24px
+$font-size-h4:            ceil($font-size-base * 1.25) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil($font-size-base * 0.85) !default; // ~12px
+
+$line-height-base:        1.5;
+$line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
+
+$headings-font-family:    $font-family-base !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;

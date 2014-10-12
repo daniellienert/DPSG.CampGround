@@ -2,20 +2,22 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 <div{attributes -> f:format.raw()}>
 <figure{f:if(condition: imageClassName, then: ' class="{imageClassName}"')}>
+
 <f:if condition="{image}">
 	<f:then>
 		<f:if condition="{link}">
 			<f:then>
 				<a href="{link}">
 					<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}"
-								 maximumHeight="{maximumHeight}" allowCropping="{allowCropping
-    }" allowUpScaling="{allowUpScaling}"/>
+								 maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}"/>
 				</a>
 			</f:then>
 			<f:else>
-				<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}"
-							 maximumHeight="{maximumHeight}" allowCropping="{allowCropping
-    }" allowUpScaling="{allowUpScaling}"/>
+				<f:if condition="{node.context.workspace.name} == 'live'">
+					<a href="{media:uri.image(asset: image, maximumWidth: '1200', maximumHeight: '600')}" class="lightbox"></f:if>
+				<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="FALSE"/>
+				<f:if condition="{node.context.workspace.name} == 'live'">
+					</a></f:if>
 			</f:else>
 		</f:if>
 	</f:then>

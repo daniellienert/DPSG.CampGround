@@ -1,7 +1,27 @@
-.typo3-neos-nodetypes-textwithimage, .typo3-neos-nodetypes-image {
+.typo3-neos-nodetypes-textwithimage, .typo3-neos-nodetypes-image, .blog-header-image {
+
+
+  display: table;
+
+  figure {
+    border: 5px solid white;
+    margin-bottom: 5px;
+    display: table;
+    background-color: white;
+  }
+
+  figcaption {
+
+    background-color: white;
+
+    p {
+      margin: 0;
+      padding: 4px 0 0 0;
+    }
+  }
 
   img {
-    border: 5px solid white;
+    max-width: 100%
   }
 
   .typo3-neos-alignment-left {
@@ -16,5 +36,9 @@
 }
 
 .typo3-neos-nodetypes-fourcolumn {
+  margin-bottom: 10px;
+}
+
+.typo3-neos-nodetypes-threecolumn {
   margin-bottom: 10px;
 }

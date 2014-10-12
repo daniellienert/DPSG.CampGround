@@ -6,7 +6,7 @@
 
 .nav {
   li {
-  	font-size: 1.4em;
+  	font-size: 1.2em;
 	font-family: $font-alternative;
   }
 }
@@ -14,7 +14,17 @@
 .nav-pills {
   li {
 	background-color: white;
-	font-color: $dpsg-blue;
+	color: $dpsg-blue;
   }
 }
 
+.neos-contentcollection {
+  nav {
+    li {
+      a {
+        color: $dpsg-blue;
+        padding: 5px 15px;
+      }
+    }
+  }
+}

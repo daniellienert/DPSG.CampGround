@@ -1,52 +1,48 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 <article class="blog-entry">
-	<header>
-		<time>{f:format.date(date: node.properties.publicationDate, format: dateFormat)}</time>
+	<div class="row">
 
-		<neos:contentElement.wrap node="{node}">
-			<h1>
-				{neos:contentElement.editable(property: 'title')}
-			</h1>
-		</neos:contentElement.wrap>
-			<div class="story-meta">
-				<div class="row">
-					<div class="col-md-4">
-						<p>Stufe: {groupType}</p>
-					</div>
-					<div class="col-md-4">
-						<p>
-							<f:if condition="{node.properties.storyEndDate}">
-								<f:then>Von: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}</f:then>
-								<f:else>Am: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
-							</f:if>
-						</p>
-					</div>
-					<f:if condition="{node.properties.author}">
-						<div class="col-md-4">
-							<p>Autor: {node.properties.author}</p>
-						</div>
-					</f:if>
+		<div class="col-md-9">
+			<neos:contentElement.wrap node="{node}">
+				<h1>
+					{neos:contentElement.editable(property: 'title')}
+				</h1>
+			</neos:contentElement.wrap>
+
+			<f:if condition="{node.properties.storyHeaderImage}">
+				<div class="blog-header-image">
+					<figure>
+						<media:image image="{node.properties.storyHeaderImage}" alt="{node.properties.storyHeaderImage.alternativeText}"
+									 title="{node.properties.storyHeaderImage.title}"
+									 maximumWidth="820" maximumHeight="350" allowCropping="TRUE"/>
+					</figure>
 				</div>
+			</f:if>
+
+			{content -> f:format.raw()}
+		</div>
+
+		<div class="col-md-3">
+			<div class="story-meta">
+				<div>
+					<p>Stufe: {groupType}</p>
+				</div>
+				<p>
+					<f:if condition="{node.properties.storyEndDate}">
+						<f:then>Von: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}</f:then>
+						<f:else>Am: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
+					</f:if>
+				</p>
+				<p>Autor: {node.properties.author}</p>
 			</div>
-	</header>
+		</div>
 
-	<f:if condition="{node.properties.entryImage}">
-		<figure class="blog-entry-image">
-			<media:image image="{node.properties.entryImage}" alt="{node.properties.entryImage.alternativeText}"
-						 title="{node.properties.entryImage.title}"  maximumWidth="{entryImageWidth}"
-						 maximumHeight="{entryImageHeight}" />
-		</figure>
-	</f:if>
 
-	{content -> f:format.raw()}
-
-	<footer>
-		<f:if condition="{showSocialButtons}">
-			<f:render partial="SocialButtons" arguments="{_all}" />
-		</f:if>
-
-		<f:render partial="EntryPager" arguments="{_all}" />
-	</footer>
-
+		<footer>
+			<f:if condition="{showSocialButtons}">
+				<f:render partial="SocialButtons" arguments="{_all}" />
+			</f:if>
+		</footer>
+	</div>
 </article>

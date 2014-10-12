@@ -2,13 +2,19 @@
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
   ui:
     label: 'Stufe'
-    icon: 'user'
+    icon: 'icon-leaf'
 
-'DPSG.CampGround::Mitglied':
+'DPSG.CampGround::Leiter':
   superTypes: ['TYPO3.Neos:Document']
   ui:
-    label: 'Mitglied'
-    icon: 'user'
+    label: 'Leiter'
+    icon: 'icon-user'
   childNodes:
-    firstNme:
-      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    'userImage':
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: 'Benutzerbild'
+        reloadIfChanged: true
+        inspector:
+          group: 'Leiter'

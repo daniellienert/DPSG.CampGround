@@ -1,23 +1,21 @@
 # Original by Dominique Feyer https://gist.github.com/dfeyer/7047160
 
 'DPSG.CampGround:GoogleMap':
-  superTypes:
-    - 'TYPO3.Neos:Content'
+  superTypes: ['TYPO3.Neos:Content']
   ui:
-    group: 'general'
-    icon: 'icon-map-marker'
     label: 'Google Map'
+    icon: 'icon-map-marker'
     inspector:
       groups:
-        googlemaps:
+        'googlemaps':
           label: 'Google Map'
-          position: '1'
+          position: 1
   properties:
     longitude:
       type: string
       defaultValue: '46.526448'
       ui:
-        label: 'Longitude:'
+        label: 'Longitude'
         reloadIfChanged: TRUE
         inspector:
           group: 'googlemaps'
