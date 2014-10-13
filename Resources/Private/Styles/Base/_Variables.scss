@@ -1,3 +1,14 @@
+// Grays
+// -------------------------
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
+// Brand colors
+// -------------------------
 $dpsg-blue:							#003056;
 
 $border-radius-base:				0;
@@ -37,3 +48,11 @@ $headings-font-family:    $font-family-base !default;
 $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
+
+
+// Breadcrumbs
+// -------------------------
+$breadcrumb-bg:               $body-bg;
+$breadcrumb-color:            #ccc !default;
+$breadcrumb-active-color:     $gray-light !default;
+$breadcrumb-separator:        "/" !default;

@@ -17,6 +17,9 @@
 <f:section name="body">
 	<f:render partial="Header" arguments="{_all}"/>
 	{parts.menu -> f:format.raw()}
+	<div class="container">
+		{parts.breadcrumb -> f:format.raw()}
+	</div>
 
 	<div class="container section-content">
 		{content.main -> f:format.raw()}

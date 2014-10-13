@@ -33,7 +33,7 @@
     inspector:
       groups:
         storyProperties:
-          label: 'Story Properties'
+          label: 'Eigenschaften'
           position: 1
 
   properties:
@@ -85,6 +85,17 @@
               Leiter:
                 label: 'Leiter'
 
+    group:
+      type: references
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Stufe Ref'
+        inspector:
+          group: 'storyProperties'
+          editorOptions:
+            nodeTypes: ['DPSG.CampGround::Stufe']
+
+
     author:
       type: string
       ui:
@@ -100,4 +111,30 @@
         reloadIfChanged: true
         inspector:
           group: 'storyProperties'
+
+
+##
+# Story Teaser
+#
+'DPSG.CampGround:StorySlider':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Artikel Slider'
+    inspector:
+      groups:
+        'stories':
+          label: 'Artikel'
+          position: 10
+
+  properties:
+    numberOfArticles:
+      type: integer
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/IntegerValidator': []
+      ui:
+        label: 'Anzahl Artikel'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'events'
 

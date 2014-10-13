@@ -5,6 +5,7 @@
 include: Documents/Story.ts2
 include: Documents/StoryList.ts2
 
+include: NodeTypes/StorySlider.ts2
 include: NodeTypes/YouTube.ts2
 include: NodeTypes/GoogleMap.ts2
 include: NodeTypes/BootstrapAdjustments.ts2
@@ -37,7 +38,7 @@ page = Page {
 				current.attributes.class = 'active'
 			}
 
-			breadcrumb = Breadcrumb
+			breadcrumb = BreadcrumbMenu
 		}
 
 		site = ${site}

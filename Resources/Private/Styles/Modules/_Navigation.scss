@@ -4,6 +4,10 @@
   }
 }
 
+.navbar {
+  margin-bottom: 15px;
+}
+
 .nav {
   li {
   	font-size: 1.2em;
@@ -27,4 +31,9 @@
       }
     }
   }
+}
+
+.breadcrumb {
+  padding: 0;
+  margin-bottom: 15px;
 }
