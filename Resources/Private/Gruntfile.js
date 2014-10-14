@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 			js: {
 				libs: [
 					'bower_components/jquery/dist/jquery.min.js',
-					'bower_components/bootstrap_sass/js/dropdown.js',
+					'bower_components/bootstrap-sass/dist/js/bootstrap.js',
 					'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
 					'bower_components/gmaps/gmaps.js'
 				]
@@ -53,6 +53,9 @@ module.exports = function (grunt) {
 
 
 		uglify: {
+			options: {
+				beautify: true
+			},
 			dist: {
 				src: [
 					'<%= dirs.js.src %>'

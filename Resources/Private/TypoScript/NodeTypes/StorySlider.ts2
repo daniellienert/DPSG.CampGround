@@ -1,4 +1,13 @@
 prototype(DPSG.CampGround:StorySlider)  {
-    numberOfArticles = ${q(node).property('numberOfArticles')}
-    events = ${Search.query(site).nodeType("DPSG.CampGround:Story").sortDesc('storyStartDate').limit(10).execute()}
+    #numberOfArticles = ${q(node).property('numberOfArticles')}
+    #events = ${Search.query(site).nodeType('DPSG.CampGround:Story').sortDesc('storyStartDate').limit(10).execute()}
+
+	stories = ${Array.slice(Array.reverse(q(site).find('[instanceof DPSG.CampGround:Story]').get()),0,5)}
+
+	@cache {
+		mode = 'cached'
+		entryIdentifier.documentNode = ${documentNode}
+		// Flush the blog feed when a blog entry is changed
+		entryTags.1 = 'NodeType_DPSG.CampGround:Story'
+	}
 }

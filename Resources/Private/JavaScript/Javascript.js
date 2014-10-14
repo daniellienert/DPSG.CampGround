@@ -1,23 +1,30 @@
-/** Lightbox **/
 
-$('.lightbox').magnificPopup({
-	type: 'image'
-});
 
-/** GMaps Integration **/
+$(function() {
 
-$('.map-canvas').each(function (index) {
+	/** Carousel **/
+	$('.carousel').carousel({
+		interval: 3000
+	})
 
-	var map = new GMaps({
-		div: $(this).attr('id'),
-		lat: $(this).data('latitude'),
-		lng: $(this).data('longitude')
+	/** Lightbox **/
+	$('.lightbox').magnificPopup({
+		type: 'image'
 	});
 
-	map.addMarker({
-		lat: $(this).data('latitude'),
-		lng: $(this).data('longitude'),
-		title: $(this).data('markertitle')
+	/** GMaps Integration **/
+	$('.map-canvas').each(function (index) {
+
+		var map = new GMaps({
+			div: $(this).attr('id'),
+			lat: $(this).data('latitude'),
+			lng: $(this).data('longitude')
+		});
+
+		map.addMarker({
+			lat: $(this).data('latitude'),
+			lng: $(this).data('longitude'),
+			title: $(this).data('markertitle')
+		});
 	});
 });
-

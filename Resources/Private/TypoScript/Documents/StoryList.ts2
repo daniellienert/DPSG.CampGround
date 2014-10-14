@@ -2,7 +2,6 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 	sectionName = 'feed'
 
 	node = ${node}
-
 	@override {
 		requestFormat = ${request.format}
 	}
@@ -22,7 +21,7 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 	}
 
 	entries = TYPO3.TypoScript:Collection {
-		sourceNode = ${q(node).property('sourceNode')}
+		sourceNode = ${node.properties.sourceNode ? node.properties.sourceNode : site}
 		collection = ${q(this.sourceNode).find('[instanceof DPSG.CampGround:Story]')}
 
 		itemName = 'node'
