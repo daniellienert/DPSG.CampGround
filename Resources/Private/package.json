@@ -1,7 +1,7 @@
 {
   "name": "DPSG.CampGround",
   "version": "0.0.0",
-  "description": "",
+  "description": "Site Package DPSG.CampGround",
   "dependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-copy": "~0.5.0",
