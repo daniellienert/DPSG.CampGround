@@ -11,6 +11,7 @@ $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 // -------------------------
 $dpsg-blue:							#003056;
 
+
 $border-radius-base:				0;
 
 $navbar-default-bg:					$dpsg-blue;
@@ -47,7 +48,7 @@ $line-height-computed:    floor($font-size-base * $line-height-base) !default; /
 $headings-font-family:    $font-family-base !default;
 $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
-$headings-color:          inherit !default;
+$headings-color:          $dpsg-blue;
 
 
 // Breadcrumbs

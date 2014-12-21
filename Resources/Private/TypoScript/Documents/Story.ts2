@@ -6,7 +6,8 @@ prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
     # Fall back to modified date if there is no publication date set
     publicationDate = ${node.properties.publicationDate ? node.properties.publicationDate : node.properties.lastModified}
 
-    groupType = ${node.properties.groupType ? node.properties.groupType : 'Alle'}
+    // groupType = ${node.properties.groupType ? node.properties.groupType : 'Alle'}
+	group = ${q(node).property('group')}
 
     dateFormat = 'd.m.Y'
 
