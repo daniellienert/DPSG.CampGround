@@ -11,7 +11,7 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 	title = ${q(node).property('title')}
 	storyStartDate = ${q(node).property('storyStartDate')}
 	storyEndDate = ${q(node).property('storyEndDate')}
-	groupType = ${q(node).property('groupType')}
+	group = ${q(node).property('group')}
 
 	@cache {
 		mode = 'cached'
@@ -21,7 +21,7 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 	}
 
 	entries = TYPO3.TypoScript:Collection {
-		sourceNode = ${node.properties.sourceNode ? node.properties.sourceNode : site}
+		sourceNode = ${q(node).is('[instanceof DPSG.CampGround:StoryList]') ? node : site}
 		collection = ${q(this.sourceNode).find('[instanceof DPSG.CampGround:Story]')}
 
 		itemName = 'node'
