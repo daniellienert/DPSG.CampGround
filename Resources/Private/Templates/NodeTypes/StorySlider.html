@@ -14,12 +14,14 @@
 	<div class="carousel-inner">
 		<f:for each="{stories}" as="story" iteration="iteration">
 			<div class="item{f:if(condition: iteration.isFirst, then: ' active')}">
-				<f:if condition="{story.properties.storyHeaderImage}">
-					<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="800" maximumHeight="300" allowCropping="true"/>
-				</f:if>
-				<div class="carousel-caption">
-					<h3>{story.properties.title}</h3>
-				</div>
+				<neos:link.node node="{story}">
+					<f:if condition="{story.properties.storyHeaderImage}">
+						<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="800" maximumHeight="300" allowCropping="true"/>
+					</f:if>
+					<div class="carousel-caption">
+						<h3>{story.properties.title}</h3>
+					</div>
+				</neos:link.node>
 			</div>
 		</f:for>
 	</div>

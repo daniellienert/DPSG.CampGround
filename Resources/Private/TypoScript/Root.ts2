@@ -42,7 +42,6 @@ page = Page {
 		}
 
 		site = ${site}
-
 		siteTitle = ${q(site).property('siteTitle')}
 
 		footer = TYPO3.Neos:ContentCollection {
