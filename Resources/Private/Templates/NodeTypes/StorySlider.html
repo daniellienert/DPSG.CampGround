@@ -16,7 +16,7 @@
 			<div class="item{f:if(condition: iteration.isFirst, then: ' active')}">
 				<neos:link.node node="{story}">
 					<f:if condition="{story.properties.storyHeaderImage}">
-						<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="800" maximumHeight="340" allowCropping="true"/>
+						<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="750" maximumHeight="340" allowCropping="true"/>
 					</f:if>
 					<div class="carousel-caption">
 						<h3>{story.properties.title}</h3>
