@@ -1,0 +1,37 @@
+.facebook-events {
+  @extend .white-box;
+
+  h3 {
+    margin-top: 5px;
+  }
+
+  .event {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+
+    .event-cover {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .event-time {
+      @extend .small;
+      color: $gray;
+    }
+
+    .event-info {
+      display: table-cell;
+      vertical-align: top;
+      padding-left: 5px;
+
+      h5 {
+        margin: 0;
+      }
+    }
+  }
+
+  :last-child {
+    border: none;
+  }
+
+}

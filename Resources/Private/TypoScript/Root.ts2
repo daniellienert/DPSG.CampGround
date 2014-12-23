@@ -9,6 +9,7 @@ include: NodeTypes/StorySlider.ts2
 include: NodeTypes/YouTube.ts2
 include: NodeTypes/GoogleMap.ts2
 include: NodeTypes/BootstrapAdjustments.ts2
+include: NodeTypes/FacebookEvents.ts2
 
 page = Page {
 	head {

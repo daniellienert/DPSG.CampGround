@@ -1,0 +1,3 @@
+prototype(DPSG.CampGround:FacebookEvents) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/FacebookEvents.html'
+}
