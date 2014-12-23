@@ -3,8 +3,8 @@
 
 <div>
 	<div id="{node.name}" class="facebook-events">
-		<h1>Veranstaltungen</h1>
-		<dpsg:facebook.events sinceDays="{sinceDays}" untilDays="{untilDays}" coverType="normal">
+		<h1>{node.properties.title}</h1>
+		<dpsg:facebook.events sinceDays="{node.properties.sinceDays}" untilDays="{node.properties.untilDays}" maxEvents="{node.properties.maxEvents}" coverType="normal">
 
 			<f:if condition="newYear">
 				<h2>{event.start_time -> f:format.date(format: 'Y')}</h2>

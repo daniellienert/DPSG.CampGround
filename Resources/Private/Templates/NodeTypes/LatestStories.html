@@ -1,0 +1,32 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+
+<f:section name="storyBlocks">
+	<div class="row">
+		{entries -> f:format.raw()}
+	</div>
+</f:section>
+
+
+<f:section name="singleStory">
+	<f:if condition="{node.properties.storyHeaderImage}">
+		<div class="col-md-4">
+			<div class="white-box">
+				<neos:link.node node="{node}">
+					<media:image asset="{node.properties.storyHeaderImage}" alt="{node.properties.title}" maximumWidth="340" maximumHeight="200" allowCropping="true"/>
+				</neos:link.node>
+				<neos:link.node node="{node}">
+					<h3>{node.properties.title}</h3>
+				</neos:link.node>
+				<div class="faded">{storyDate -> f:format.date(cldrFormat: 'd. LLLL y', forceLocale: true)}</div>
+				<p>
+					{teaserText -> f:format.raw()}
+				</p>
+				<p>
+					<neos:link.node node="{node}">Weiter lesen</neos:link.node>
+				</p>
+			</div>
+		</div>
+	</f:if>
+</f:section>

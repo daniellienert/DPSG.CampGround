@@ -117,5 +117,29 @@
         label: 'Anzahl Artikel'
         reloadIfChanged: TRUE
         inspector:
-          group: 'events'
+          group: 'stories'
 
+##
+# Latest Articles
+#
+'DPSG.CampGround:LatestStories':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Aktuelle Berichte'
+    inspector:
+      groups:
+        'latestStories':
+          label: 'Aktuelle Berichte'
+          position: 1
+
+  properties:
+    numberOfArticles:
+      type: integer
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/IntegerValidator': []
+      ui:
+        label: 'Anzahl Berichte'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'latestStories'

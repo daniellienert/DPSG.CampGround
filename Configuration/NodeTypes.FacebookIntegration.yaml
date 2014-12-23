@@ -27,6 +27,14 @@
                 label: 'Teaser'
               full:
                 label: 'Full List'
+    title:
+      type: string
+      defaultValue: 'Next Events'
+      ui:
+        label: 'Titel'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'facebookevents'
     sinceDays:
       type: integer
       defaultValue: 7
@@ -40,6 +48,14 @@
       defaultValue: 365
       ui:
         label: 'Until Days'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'facebookevents'
+    maxEvents:
+      type: integer
+      defaultValue: 3
+      ui:
+        label: 'Max events to display'
         reloadIfChanged: TRUE
         inspector:
           group: 'facebookevents'

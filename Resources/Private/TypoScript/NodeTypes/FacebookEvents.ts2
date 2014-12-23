@@ -1,7 +1,3 @@
 prototype(DPSG.CampGround:FacebookEvents) < prototype(TYPO3.Neos:Content) {
-
-	sinceDays = ${q(node).property('sinceDays')}
-	untilDays = ${q(node).property('untilDays')}
-
 	templatePath = ${'resource://DPSG.CampGround/Private/Templates/NodeTypes/Facebook/' + (q(node).property('mode') == 'teaser' ? 'FacebookEventsTeaser.html' : 'FacebookEvents.html')}
 }

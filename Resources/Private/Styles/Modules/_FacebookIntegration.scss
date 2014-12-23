@@ -26,8 +26,7 @@
     }
 
     .event-time {
-      @extend .small;
-      color: $gray;
+      @extend .faded;
     }
 
     .event-info {

@@ -1,5 +1,8 @@
 'DPSG.CampGround::Stufe':
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  constraints:
+    nodeTypes:
+      '*': FALSE
   ui:
     label: 'Stufe'
     icon: 'icon-leaf'

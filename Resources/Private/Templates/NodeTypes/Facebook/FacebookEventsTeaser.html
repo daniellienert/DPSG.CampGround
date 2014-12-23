@@ -3,8 +3,8 @@
 
 <div>
 	<div id="{node.name}" class="facebook-events">
-		<h3>Veranstaltungen</h3>
-		<dpsg:facebook.events sinceDays="{sinceDays}" untilDays="{untilDays}" coverType="{coverType}">
+		<h3>{node.properties.title}</h3>
+		<dpsg:facebook.events sinceDays="{node.properties.sinceDays}" untilDays="{node.properties.untilDays}" maxEvents="{node.properties.maxEvents}" coverType="{coverType}">
 			<div class="event">
 				<div class="event-cover">
 					<a href="{event.url}">

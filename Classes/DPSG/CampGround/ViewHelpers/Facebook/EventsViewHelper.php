@@ -27,10 +27,11 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 	/**
 	 * @param integer $sinceDays
 	 * @param integer $untilDays
+	 * @param integer $maxEvents
 	 * @param string $coverType
 	 * @return string
 	 */
-	public function render($sinceDays = 7, $untilDays = 365, $coverType = 'square') {
+	public function render($sinceDays = 7, $untilDays = 365, $maxEvents = 0, $coverType = 'square') {
 
 		$sinceTime = time() - ($sinceDays * 86400);
 		$untilTime = time() + ($untilDays * 86400);
@@ -43,6 +44,10 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 		$data = json_decode($jsonData, TRUE);
 		$events = $data['data'];
 		krsort($events);
+
+		if($maxEvents > 0) {
+			$events = array_slice($events, 0, $maxEvents);
+		}
 
 		$output = '';
 		$month = '';

@@ -1,3 +1,4 @@
 /bower_components/
 /Resources/Private/.sass-cache/
 /Resources/Private/node_modules/
+vendor
