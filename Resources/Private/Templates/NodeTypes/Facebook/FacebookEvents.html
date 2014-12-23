@@ -1,14 +1,27 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-
 {namespace dpsg=DPSG\CampGround\ViewHelpers}
+
 <div>
 	<div id="{node.name}" class="facebook-events">
-		<h3>Veranstaltungen</h3>
-		<dpsg:facebook.events>
+		<h1>Veranstaltungen</h1>
+		<dpsg:facebook.events sinceDays="{sinceDays}" untilDays="{untilDays}" coverType="normal">
+
+			<f:if condition="newYear">
+				<h2>{event.start_time -> f:format.date(format: 'Y')}</h2>
+			</f:if>
+			<f:if condition="newMonth">
+				<h3>{event.start_time -> f:format.date(cldrFormat: 'LLLL', forceLocale: true)}</h3>
+			</f:if>
+
 			<div class="event">
-				<div class="event-cover">
+
+				<div class="event-date-column">
+					{event.start_time -> f:format.date(format: 'd')}
+				</div>
+
+				<div class="event-cover event-cover-large">
 					<a href="{event.url}">
-						<img src="{event.cover.url}" width="52px" height="52px">
+						<img src="{event.cover.url}" width="100px" height="100px">
 					</a>
 				</div>
 				<div class="event-info">
@@ -26,9 +39,9 @@
 					<div class="event-location">
 						{event.location}
 					</div>
-				</div>
-				<div>
-					{event.description}
+					<div>
+						{event.description}
+					</div>
 				</div>
 			</div>
 		</dpsg:facebook.events>

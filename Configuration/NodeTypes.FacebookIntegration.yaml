@@ -3,3 +3,43 @@
   ui:
     label: 'Facebook Events'
     icon: 'icon-calendar'
+    inspector:
+      groups:
+        'facebookevents':
+          label: 'Events'
+          position: 1
+  properties:
+    mode:
+      type: string
+      defaultValue: 'teaser'
+      ui:
+        label: 'Display Mode'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'facebookevents'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Teaser'
+            values:
+              '':
+                label: ''
+              teaser:
+                label: 'Teaser'
+              full:
+                label: 'Full List'
+    sinceDays:
+      type: integer
+      defaultValue: 7
+      ui:
+        label: 'Since Days'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'facebookevents'
+    untilDays:
+      type: integer
+      defaultValue: 365
+      ui:
+        label: 'Until Days'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'facebookevents'
