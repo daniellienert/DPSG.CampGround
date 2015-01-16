@@ -25,7 +25,8 @@ module.exports = function (grunt) {
 			js: {
 				libs: [
 					'bower_components/jquery/dist/jquery.min.js',
-					'bower_components/bootstrap-sass/dist/js/bootstrap.js',
+					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js',
+					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js',
 					'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
 					'bower_components/gmaps/gmaps.js'
 				]
