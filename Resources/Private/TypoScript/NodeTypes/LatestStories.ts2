@@ -4,7 +4,7 @@ prototype(DPSG.CampGround:LatestStories) {
 	sectionName = 'storyBlocks'
 
 	entries = TYPO3.TypoScript:Collection {
-		collection = ${Array.slice(Array.reverse(q(site).find('[instanceof DPSG.CampGround:Story]').get()),0,3)}
+		collection = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('_storyHeaderImage', 'set').sortDesc('storyStartDate').limit(3).execute()}
 
 		itemName = 'node'
 		itemRenderer = DPSG.CampGround:LatestStory {

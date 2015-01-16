@@ -2,7 +2,8 @@ prototype(DPSG.CampGround:StorySlider)  {
     #numberOfArticles = ${q(node).property('numberOfArticles')}
     #events = ${Search.query(site).nodeType('DPSG.CampGround:Story').sortDesc('storyStartDate').limit(10).execute()}
 
-	stories = ${Array.slice(Array.reverse(q(site).find('[instanceof DPSG.CampGround:Story]').get()),0,5)}
+#	stories = ${Array.slice(Array.reverse(q(site).find('[instanceof DPSG.CampGround:Story]').get()),0,5)}
+	stories = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('_storyHeaderImage', 'set').sortDesc('storyStartDate').limit(10).execute()}
 
 	@cache {
 		mode = 'cached'

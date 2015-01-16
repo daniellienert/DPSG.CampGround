@@ -88,10 +88,17 @@
     'storyHeaderImage':
       type: 'TYPO3\Media\Domain\Model\ImageVariant'
       ui:
-        label: 'Story Header Image'
+        label: 'Artikelbild'
         reloadIfChanged: true
         inspector:
           group: 'storyProperties'
+
+    '_storyHeaderImage':
+      search:
+        elasticSearchMapping:
+          type: string
+          include_in_all: false
+        indexing: '${(node.properties.storyHeaderImage ? "set" : "missing")}'
 
 
 ##
