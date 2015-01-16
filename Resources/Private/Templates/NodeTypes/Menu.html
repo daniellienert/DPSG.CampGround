@@ -1,20 +1,27 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace dpsg=DPSG\CampGround\ViewHelpers}
+
 <nav{attributes -> f:format.raw()}>
-	<ul class="nav nav-pills nav-stacked">
-		<f:render section="itemsList" arguments="{items: items}" />
-	</ul>
+	<dpsg:multiColumnMenu items="{items}">
+		<div class="row">
+			<div class="col-md-{gridSpan}">
+				<ul class="nav nav-pills nav-stacked">
+					<f:for each="{items}" as="item" iteration="iteration">
+						<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+							<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+						</li>
+						<f:if condition="{iteration.cycle} % {itemsPerColumn}">
+							<f:then></f:then>
+							<f:else>
+								</ul></div>
+								<div class="col-md-{gridSpan}"><ul class="nav nav-pills nav-stacked">
+							</f:else>
+						</f:if>
+					</f:for>
+				</ul>
+			</div>
+		</div>
+	</dpsg:multiColumnMenu>
 </nav>
 
-<f:section name="itemsList">
-	<f:for each="{items}" as="item">
-		<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
-		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-		<f:if condition="{item.subItems}">
-			<ul>
-				<f:render section="itemsList" arguments="{items: item.subItems}" />
-			</ul>
-		</f:if>
-		</li>
-	</f:for>
-</f:section>
