@@ -74,7 +74,7 @@
         inspector:
           group: 'storyProperties'
           editorOptions:
-            nodeTypes: ['DPSG.CampGround::Stufe']
+            nodeTypes: ['DPSG.CampGround:Stufe']
 
 
     author:
