@@ -2,7 +2,7 @@ prototype(DPSG.CampGround:Stufe) < prototype(TYPO3.TypoScript:Template) {
 	templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Stufe.html'
 
 	node = ${node}
-	groupStories = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('group', node.identifier).sortDesc('storyStartDate').limit(10).execute()}
+	groupStories = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('group', node.identifier).sortDesc('storyStartDate').limit(10).log().execute()}
 
 	content = TYPO3.Neos:ContentCollection {
 		nodePath = 'main'
