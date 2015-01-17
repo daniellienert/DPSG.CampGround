@@ -78,8 +78,9 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 			$this->templateVariableContainer->add('event', $event);
 			$output .= $this->renderChildren();
 			$this->templateVariableContainer->remove('event');
-			$this->templateVariableContainer->remove('newMonth');
-			$this->templateVariableContainer->remove('newYear');
+
+			if($this->templateVariableContainer->exists('newMonth')) $this->templateVariableContainer->remove('newMonth');
+			if($this->templateVariableContainer->exists('newYear')) $this->templateVariableContainer->remove('newYear');
 		}
 
 		return $output;
