@@ -92,8 +92,6 @@
         reloadIfChanged: true
         inspector:
           group: 'storyProperties'
-
-    '_storyHeaderImage':
       search:
         elasticSearchMapping:
           type: string
