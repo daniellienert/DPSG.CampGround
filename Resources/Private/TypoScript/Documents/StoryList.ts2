@@ -26,7 +26,7 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 
 		itemName = 'node'
 		itemRenderer = DPSG.CampGround:Story {
-			templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/Story.' + requestFormat}
+			templatePath = ${'resource://DPSG.CampGround/Private/Templates/Stories/StoryTeaser.' + requestFormat}
 		}
 	}
 }

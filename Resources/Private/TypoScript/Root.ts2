@@ -2,26 +2,28 @@
 * Root TypoScript template
 */
 
-include: Documents/Story.ts2
-include: Documents/StoryList.ts2
-
-include: NodeTypes/StorySlider.ts2
-include: NodeTypes/LatestStories.ts2
-include: NodeTypes/YouTube.ts2
-include: NodeTypes/GoogleMap.ts2
-include: NodeTypes/BootstrapAdjustments.ts2
-include: NodeTypes/FacebookEvents.ts2
+include: Documents/*
+include: NodeTypes/*
 
 page = Page {
 	head {
 		stylesheets.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'stylesheets'
+
+			node = ${node}
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
+		}
+
+		headFaceBookData.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
+			sectionName = 'headFaceBookData'
+
+			node = ${node}
 		}
 	}
 
@@ -38,6 +40,9 @@ page = Page {
 
 				attributes.class = 'nav navbar-nav'
 				current.attributes.class = 'active'
+
+				site = ${site}
+				siteTitle = ${q(site).property('siteTitle')}
 			}
 
 			breadcrumb = BreadcrumbMenu
