@@ -1,0 +1,29 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<article class="blog-entry">
+	<div class="row">
+
+		<div class="col-md-9">
+			<neos:contentElement.wrap node="{node}">
+				<h1>
+					{neos:contentElement.editable(property: 'title')}
+				</h1>
+			</neos:contentElement.wrap>
+
+			<f:render partial="HeaderImage" arguments="{headerImage:node.properties.storyHeaderImage, node:node}" />
+
+			{content -> f:format.raw()}
+		</div>
+
+		<div class="col-md-3">
+			<f:render partial="StoryMetaBox" arguments="{_all}" />
+		</div>
+
+
+		<footer>
+			<f:if condition="{showSocialButtons}">
+				<f:render partial="SocialButtons" arguments="{_all}" />
+			</f:if>
+		</footer>
+	</div>
+</article>

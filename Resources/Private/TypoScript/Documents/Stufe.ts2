@@ -1,0 +1,15 @@
+prototype(DPSG.CampGround:Stufe) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Stufe.html'
+
+	node = ${node}
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+		@cache.mode = 'cached'
+	}
+}
+
+prototype(TYPO3.Neos:PrimaryContent).Stufe {
+	condition = ${q(node).is('[instanceof DPSG.CampGround:Stufe]')}
+	type = 'DPSG.CampGround:Stufe'
+}

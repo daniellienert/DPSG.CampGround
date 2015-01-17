@@ -1,4 +1,4 @@
-'DPSG.CampGround::Stufe':
+'DPSG.CampGround:Stufe':
   superTypes: ['TYPO3.Neos:Document']
   constraints:
     nodeTypes:

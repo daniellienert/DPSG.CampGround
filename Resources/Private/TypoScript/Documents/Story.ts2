@@ -1,7 +1,5 @@
-
-
 prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
-	templatePath = 'resource://DPSG.CampGround/Private/Templates/Stories/Story.html'
+	templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Story.html'
 
     # Fall back to modified date if there is no publication date set
     publicationDate = ${node.properties.publicationDate ? node.properties.publicationDate : node.properties.lastModified}

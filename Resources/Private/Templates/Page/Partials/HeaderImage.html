@@ -1,0 +1,15 @@
+{namespace media=TYPO3\Media\ViewHelpers}
+<div class="story-header-image">
+	<figure>
+		<f:if condition="{headerImage}">
+			<f:then>
+				<media:image image="{headerImage}" alt="{headerImage.alternativeText}"
+							 title="{f:if(condition:headerImage.title, then:headerImage.title, else:node.properties.title)}"
+							 maximumWidth="820" maximumHeight="350" allowCropping="TRUE"/>
+			</f:then>
+			<f:else>
+				<img src="{f:uri.resource(path: 'Images/HeaderImagePlaceHolder.jpg' package:'DPSG.CampGround')}" title="{node.properties.title}">
+			</f:else>
+		</f:if>
+	</figure>
+</div>
