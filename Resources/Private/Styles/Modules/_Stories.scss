@@ -1,5 +1,20 @@
-.story-meta {
+.story {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+
+  .story-meta {
+    @extend .white-box;
+    margin: 24px 0 0 0;
+  }
+
+  .story-teaser-text {
+    margin-top:20px;
+  }
+}
+
+.story-teaser-box {
   @extend .white-box;
-  margin: 24px 0 0 0;
+  min-height: 480px;
 }
 

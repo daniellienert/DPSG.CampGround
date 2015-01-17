@@ -1,0 +1,28 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div class="story-meta">
+	<div>
+		<h5>Stufe</h5>
+		<ul>
+			<f:if condition="{group}">
+				<f:then>
+					<f:for each="{group}" as="groupNode">
+						<li>
+							<neos:link.node node="{groupNode}">{groupNode.properties.title}</neos:link.node>
+						</li>
+					</f:for>
+				</f:then>
+				<f:else>
+					<a href="stufen.html">Alle</a>
+				</f:else>
+			</f:if>
+		</ul>
+	</div>
+	<p>
+		<f:if condition="{node.properties.storyEndDate}">
+			<f:then>Vom {f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}</f:then>
+			<f:else>Am: {f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
+		</f:if>
+	</p>
+	<p>Autor {node.properties.author}</p>
+</div>
