@@ -17,13 +17,15 @@
 
 			<h2>{groupNode.properties.title}</h2>
 			<div class="typo3-neos-nodetypes-image">
-				<figure>
-					<f:if condition="{groupNode.properties.groupImage}">
-						<media:image image="{groupNode.properties.groupImage}" alt="{groupNode.properties.groupImage.alternativeText}"
-									 title="{f:if(condition:groupNode.properties.groupImage.title, then:groupNode.properties.groupImage.title, else:groupNode.properties.title)}"
-									 maximumWidth="400" maximumHeight="260" allowCropping="TRUE"/>
-					</f:if>
-				</figure>
+				<neos:link.node node="{groupNode}">
+					<figure>
+						<f:if condition="{groupNode.properties.groupImage}">
+							<media:image image="{groupNode.properties.groupImage}" alt="{groupNode.properties.groupImage.alternativeText}"
+										 title="{f:if(condition:groupNode.properties.groupImage.title, then:groupNode.properties.groupImage.title, else:groupNode.properties.title)}"
+										 maximumWidth="400" maximumHeight="260" allowCropping="TRUE"/>
+						</f:if>
+					</figure>
+				</neos:link.node>
 			</div>
 
 			<p>
