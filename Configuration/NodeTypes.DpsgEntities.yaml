@@ -1,3 +1,19 @@
+'DPSG.CampGround:GroupOverview':
+  superTypes: ['TYPO3.Neos:Document']
+  constraints:
+    nodeTypes:
+      'DPSG.CampGround:Stufe': TRUE
+      '*': FALSE
+
+  childNodes:
+    'main':
+      type: 'TYPO3.Neos:ContentCollection'
+
+  ui:
+    label: 'Stufenübersicht'
+    icon: 'icon-home'
+
+
 'DPSG.CampGround:Stufe':
   superTypes: ['TYPO3.Neos:Document']
   constraints:
@@ -10,7 +26,7 @@
 
   ui:
     label: 'Stufe'
-    icon: 'icon-leaf'
+    icon: 'icon-group'
     inspector:
       groups:
         Stufe:

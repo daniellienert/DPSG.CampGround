@@ -9,6 +9,10 @@
       'DPSG.CampGround:Story': TRUE
       '*': FALSE
 
+  childNodes:
+    'main':
+      type: 'TYPO3.Neos:ContentCollection'
+
   ui:
     label: 'Story List'
     icon: 'icon-list-alt'
@@ -34,7 +38,7 @@
       type: 'TYPO3.Neos:ContentCollection'
 
   ui:
-    label: 'Story'
+    label: 'Bericht'
     icon: 'icon-calendar'
     inspector:
       groups:

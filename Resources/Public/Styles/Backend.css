@@ -1,3 +1,9 @@
 @media (min-width: 768px) { .container { max-width: 750px; width: 100%; } }
 @media (min-width: 992px) { .container { max-width: 970px; width: 100%; } }
 @media (min-width: 1200px) { .container { max-width: 1170px; width: 100%; } }
+
+.neos-empty-contentcollection-overlay {
+    padding: 15px 0;
+    margin: 15px 0;
+    background-color: #e0e3e9;
+}

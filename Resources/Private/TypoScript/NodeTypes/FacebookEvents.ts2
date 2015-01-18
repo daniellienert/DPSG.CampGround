@@ -1,3 +1,7 @@
 prototype(DPSG.CampGround:FacebookEvents) < prototype(TYPO3.Neos:Content) {
 	templatePath = ${'resource://DPSG.CampGround/Private/Templates/NodeTypes/Facebook/' + (q(node).property('mode') == 'teaser' ? 'FacebookEventsTeaser.html' : 'FacebookEvents.html')}
+
+	@cache {
+		maximumLifetime = '86400'
+	}
 }

@@ -38,16 +38,11 @@
 
 
 <f:section name="subItemsList">
-	<dpsg:multiColumnMenu items="{items}">
-		<div class="row" style="width:{menuWidth}px;">
-			<ul class="dropdown-column col-md-{gridSpan}">
-				<f:for each="{items}" as="item" iteration="iteration">
-					<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
-						<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-					</li>
-					<f:if condition="{iteration.cycle} % {itemsPerColumn}"><f:then></f:then><f:else></ul><ul class="dropdown-column col-md-{gridSpan}"></f:else></f:if>
-				</f:for>
-			</ul>
-		</div>
-	</dpsg:multiColumnMenu>
+		<dpsg:multiColumn each="{items}" as="item" itemsPerColumn="12" columnTag="ul">
+			<f:if condition="{newRow}"><div class="row" style="width:{containerWidth}px;"></f:if>
+			<f:if condition="{newColumn}"><ul class="dropdown-column col-md-{gridSpan}"></f:if>
+			<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+				<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+			</li>
+		</dpsg:multiColumn>
 </f:section>

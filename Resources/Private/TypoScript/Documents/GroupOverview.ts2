@@ -1,0 +1,18 @@
+prototype(DPSG.CampGround:GroupOverview) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/GroupOverview.html'
+
+	node = ${node}
+	groupNodes = ${q(node).find('[instanceof DPSG.CampGround:Stufe]').get()}
+
+	@cache {
+		mode = 'cached'
+		entryIdentifier.documentNode = ${documentNode}
+		// Flush this element when a n entry of the given type is changed
+		entryTags.1 = 'NodeType_DPSG.CampGround:Stufe'
+	}
+}
+
+prototype(TYPO3.Neos:PrimaryContent).GroupOverview {
+	condition = ${q(node).is('[instanceof DPSG.CampGround:GroupOverview]')}
+	type = 'DPSG.CampGround:GroupOverview'
+}
