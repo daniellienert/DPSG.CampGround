@@ -3,7 +3,7 @@
 	<figure>
 		<f:if condition="{headerImage}">
 			<f:then>
-				<f:if condition="{node.context.workspace.name} == 'live'"><a href="{media:uri.image(image: headerImage.originalImage, maximumWidth: '1200', maximumHeight: '600')}" class="lightbox"></f:if>
+				<f:if condition="{node.context.workspace.name} == 'live'"><a href="{media:uri.image(image: headerImage.originalImage, maximumWidth: '2480', maximumHeight: '1024')}" class="lightbox"></f:if>
 					<media:image image="{headerImage}" alt="{headerImage.alternativeText}"
 							 title="{f:if(condition:headerImage.title, then:headerImage.title, else:node.properties.title)}"
 							 maximumWidth="820" maximumHeight="350" allowCropping="TRUE" allowUpScaling="TRUE"/>
