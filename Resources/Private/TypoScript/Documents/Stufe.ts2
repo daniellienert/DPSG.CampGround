@@ -16,3 +16,9 @@ prototype(TYPO3.Neos:PrimaryContent).Stufe {
 	condition = ${q(node).is('[instanceof DPSG.CampGround:Stufe]')}
 	type = 'DPSG.CampGround:Stufe'
 }
+
+prototype(DPSG.CampGround:PageImage).Stufe {
+	condition = ${q(node).is('[instanceof DPSG.CampGround:Stufe]')}
+	renderer = ${q(node).property('groupImage')}
+	@position='start 20'
+}

@@ -2,6 +2,14 @@
 * Root TypoScript template
 */
 
+prototype(DPSG.CampGround:PageImage) < prototype(TYPO3.TypoScript:Case) {
+	default {
+		condition = ${true}
+		renderer = ''
+		@position = 'end'
+	}
+}
+
 include: Documents/*
 include: NodeTypes/*
 
@@ -19,11 +27,15 @@ page = Page {
 			sectionName = 'headScripts'
 		}
 
-		headFaceBookData.site = TYPO3.TypoScript:Template {
+		metadata = TYPO3.TypoScript:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
-			sectionName = 'headFaceBookData'
+			sectionName = 'metadata'
 
 			node = ${node}
+			siteTitle = ${q(site).property('siteTitle')}
+			pageDescription = ${String.cropAtWord(String.stripTags(q(node).find('main').children().find('[instanceof TYPO3.Neos.NodeTypes:Text]').first().property('text')), 200, ' ...')}
+
+			pageImage = DPSG.CampGround:PageImage
 		}
 	}
 

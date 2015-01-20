@@ -15,15 +15,10 @@
 			{content -> f:format.raw()}
 		</div>
 
+		<f:render partial="SocialButtons" arguments="{_all}" />
+
 		<div class="col-md-3">
 			<f:render partial="StoryMetaBox" arguments="{_all}" />
 		</div>
-
-
-		<footer>
-			<f:if condition="{showSocialButtons}">
-				<f:render partial="SocialButtons" arguments="{_all}" />
-			</f:if>
-		</footer>
 	</div>
 </article>

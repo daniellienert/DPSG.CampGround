@@ -10,7 +10,18 @@
 			<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Backend.css', package: 'DPSG.CampGround')}" media="all"/>
 		</f:if>
 	</f:section>
+
 	<f:section name="headScripts"></f:section>
+
+	<f:section name="metadata">
+		<meta property="og:title" content="{node.properties.title}" />
+		<meta property="og:url" content="{neos:uri.node(absolute: true, node: node, format: 'html')}" />
+		<meta property="og:site_name" content="{siteTitle}" />
+		<f:if condition="{pageDescription}"><meta property="og:description" content="{pageDescription}" /></f:if>
+		<f:if condition="{pageImage}"><meta property="og:image" content="{media:uri.image(asset:pageImage)}" /></f:if>
+	</f:section>
+
+
 </head>
 <body>
 <f:section name="body">

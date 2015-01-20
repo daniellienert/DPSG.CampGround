@@ -24,7 +24,12 @@ prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
 }
 
 prototype(TYPO3.Neos:PrimaryContent).Story {
-
 	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
 	type = 'DPSG.CampGround:Story'
+}
+
+prototype(DPSG.CampGround:PageImage).Story {
+	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
+	renderer = ${q(node).property('storyHeaderImage')}
+	@position='start 10'
 }
