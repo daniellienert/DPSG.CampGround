@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 		dirs: {
 			js: {
 				src: [
-					'JavaScript/**/*.js'
+					'JavaScript/*.js'
 					],
 				dest: '../Public/JavaScript'
 			},
@@ -28,7 +28,8 @@ module.exports = function (grunt) {
 					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js',
 					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js',
 					'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
-					'bower_components/gmaps/gmaps.js'
+					'bower_components/gmaps/gmaps.js',
+					'JavaScript/Lib/jquery.socialshareprivacy/jquery.socialshareprivacy.js'
 				]
 			}
 		},
