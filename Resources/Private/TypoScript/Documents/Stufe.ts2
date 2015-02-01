@@ -4,6 +4,11 @@ prototype(DPSG.CampGround:Stufe) < prototype(TYPO3.TypoScript:Template) {
 	node = ${node}
 	groupStories = ${Array.slice(Array.concat(Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('group', node.identifier).sortDesc('storyStartDate').limit(10).execute(), Search.query(site).nodeType('DPSG.CampGround:Story').queryFilter("missing", {"field": "group"}).sortDesc('storyStartDate').limit(10).execute()),0,10)}
 
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+		@cache.mode = 'cached'
+	}
+
 	@cache {
 		mode = 'cached'
 		entryIdentifier.documentNode = ${documentNode}
