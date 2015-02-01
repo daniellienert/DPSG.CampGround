@@ -1,6 +1,6 @@
 #story-carousel {
   max-width:  750px;
-  max-height: 425px;
+  height: 425px;
 
   border: 7px solid white;
   background-color: white;
@@ -27,6 +27,24 @@
         text-decoration: underline;
       }
     }
+
+    .active {
+      opacity: 1;
+    }
+
+    .active.left, .active.right {
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .next.left, .prev.right {
+      opacity: 1;
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
   }
 
   .carousel-indicators {
@@ -39,5 +57,14 @@
     .active {
       background-color: $dpsg-blue;
     }
+  }
+
+  .item {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    height: 100%;
   }
 }

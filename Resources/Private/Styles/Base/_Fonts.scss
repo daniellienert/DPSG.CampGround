@@ -1,0 +1,11 @@
+/*
+* There seems to be a realy nasty bootstrap / sass / layer 8 bug ... so the fonts are included here directly
+*/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: font-url('/_Resources/Static/Packages/DPSG.CampGround/Fonts/glyphicons-halflings-regular.eot');
+  src: font-url('/_Resources/Static/Packages/DPSG.CampGround/Fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  font-url('/_Resources/Static/Packages/DPSG.CampGround/Fonts/glyphicons-halflings-regular.woff') format('woff'),
+  font-url('/_Resources/Static/Packages/DPSG.CampGround/Fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  font-url('/_Resources/Static/Packages/DPSG.CampGround/Fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
