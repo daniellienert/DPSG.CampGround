@@ -14,12 +14,23 @@
 					</object>
 				</div>
 			</div>
-			<div class="col-md-9">
-				<neos:contentElement.wrap node="{site}">
-					<div class="site-title">
-						{neos:contentElement.editable(property: 'siteTitle')}
+			<div class="col-md-9 header-right">
+				<div class="row">
+					<div class="col-md-10">
+						<neos:contentElement.wrap node="{site}">
+							<div class="site-title">
+								{neos:contentElement.editable(property: 'siteTitle')}
+							</div>
+						</neos:contentElement.wrap>
 					</div>
-				</neos:contentElement.wrap>
+					<div class="col-md-2">
+						<div id="otherPlatformsContainer">
+							<f:if condition="{dpsgSettings.FacebookIntegration.PageName}">
+								<a href="https://www.facebook.com/{dpsgSettings.FacebookIntegration.PageName}" class="icon-facebook btn"></a>
+							</f:if>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</header>

@@ -4,8 +4,15 @@
   }
 
   .site-title {
-	margin-top: 60px;
-	text-align: right;
 	font-size: 	$font-size-h3;
+    text-align: right;
+  }
+
+  .header-right {
+    margin-top: 60px;
+  }
+
+  #otherPlatformsContainer {
+    text-align: right;
   }
 }

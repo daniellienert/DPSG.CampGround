@@ -62,6 +62,7 @@ page = Page {
 
 		site = ${site}
 		siteTitle = ${q(site).property('siteTitle')}
+		dpsgSettings = ${Configuration.setting('DPSG.CampGround')}
 
 		footer = TYPO3.Neos:ContentCollection {
 			nodePath = ${q(site).find('footer').property('_path')}
