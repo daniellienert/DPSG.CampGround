@@ -5,12 +5,6 @@ use TYPO3\Flow\Annotations as Flow;
 
 class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
 
-	/**
-	 * @Flow\inject
-	 * @var \TYPO3\Flow\Log\Logger
-	 */
-	protected $logger;
-
 
 	/**
 	 * @Flow\Inject(setting="FacebookIntegration.PageId")
