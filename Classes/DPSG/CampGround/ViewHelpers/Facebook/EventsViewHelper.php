@@ -6,6 +6,13 @@ use TYPO3\Flow\Annotations as Flow;
 class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
 
 	/**
+	 * @Flow\inject
+	 * @var \TYPO3\Flow\Log\Logger
+	 */
+	protected $logger;
+
+
+	/**
 	 * @Flow\Inject(setting="FacebookIntegration.PageId")
 	 * @var integer
 	 */
@@ -33,21 +40,7 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 	 */
 	public function render($sinceDays = 7, $untilDays = 365, $maxEvents = 0, $coverType = 'square') {
 
-		$sinceTime = time() - ($sinceDays * 86400);
-		$untilTime = time() + ($untilDays * 86400);
-
-		$json_link = sprintf('https://graph.facebook.com/%s/events/feed/?fields=%s&access_token=%s&since=%s&until=%s',
-			$this->pageId, $this->fields, $this->accessToken, $sinceTime, $untilTime
-		);
-
-		$jsonData = file_get_contents($json_link);
-		$data = json_decode($jsonData, TRUE);
-		$events = $data['data'];
-		krsort($events);
-
-		if($maxEvents > 0) {
-			$events = array_slice($events, 0, $maxEvents);
-		}
+		$events = $this->loadEvents($sinceDays, $untilDays, $maxEvents);
 
 		$output = '';
 		$month = '';
@@ -84,5 +77,34 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 		}
 
 		return $output;
+	}
+
+
+	/**
+	 * @param $sinceDays
+	 * @param $untilDays
+	 * @param $maxEvents
+	 * @return array
+	 */
+	protected function loadEvents($sinceDays, $untilDays, $maxEvents) {
+		$sinceTime = time() - ($sinceDays * 86400);
+		$untilTime = time() + ($untilDays * 86400);
+
+		$json_link = sprintf('https://graph.facebook.com/v2.2/%s/events/?fields=%s&access_token=%s&since=%s&until=%s',
+			$this->pageId, $this->fields, $this->accessToken, $sinceTime, $untilTime
+		);
+
+		$jsonData = file_get_contents($json_link);
+
+
+		$data = json_decode($jsonData, TRUE);
+		$events = $data['data'];
+		krsort($events);
+
+		if ($maxEvents > 0) {
+			$events = array_slice($events, 0, $maxEvents);
+			return $events;
+		}
+		return $events;
 	}
 }
