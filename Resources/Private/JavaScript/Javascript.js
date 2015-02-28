@@ -49,7 +49,7 @@ $(function() {
 			'lang_path' : $('.socialshareprivacy').data('basepath') + '/lang/',
 			'css_path'	: $('.socialshareprivacy').data('basepath') +  '/socialshareprivacy.css',
 			'language'  : 'de',
-			'uri' 		: function(context) {return $(context).data('uri');},
+			'uri' 		: $(this).data('uri'),
 			'info_link'	: '/impressum.html'
 		});
 	}
