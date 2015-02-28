@@ -1,6 +1,6 @@
 #story-carousel {
   max-width:  750px;
-  height: 425px;
+  max-height: 425px;
 
   border: 7px solid white;
   background-color: white;
@@ -10,6 +10,11 @@
   .carousel-inner {
 
      margin-bottom:50px;
+
+    .item>a>img {
+      max-width:  736px;
+      max-height: 411px;
+    }
 
     .carousel-caption {
       width: 300px;

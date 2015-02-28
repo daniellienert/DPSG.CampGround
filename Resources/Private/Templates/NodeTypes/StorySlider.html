@@ -1,7 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 
-<div id="story-carousel" class="carousel slide story-carousel carousel-fade" data-ride="carousel">
+<div id="story-carousel" class="carousel slide story-carousel carousel-fade>" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<f:for each="{stories}" as="story" iteration="iteration">
@@ -16,7 +16,7 @@
 			<div class="item{f:if(condition: iteration.isFirst, then: ' active')}">
 				<neos:link.node node="{story}">
 					<f:if condition="{story.properties.storyHeaderImage}">
-						<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="750" maximumHeight="420" allowCropping="true" allowUpScaling="TRUE"/>
+						<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="736" maximumHeight="411" allowCropping="TRUE" allowUpScaling="TRUE"/>
 					</f:if>
 					<div class="carousel-caption">
 						<h3>{story.properties.title}</h3>
