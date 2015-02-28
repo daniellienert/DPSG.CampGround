@@ -28,27 +28,29 @@ $(function() {
 		});
 	});
 
-	$('.socialshareprivacy').socialSharePrivacy({
-		'services' : {
-			'facebook' : {
-				'sharer' : {
-					'status'    : 'on',
-					'dummy_img' : $('.socialshareprivacy').data('basepath') + '/images/dummy_facebook_share_de.png',
-					'img'       : $('.socialshareprivacy').data('basepath') + '/images/facebook_share_de.png'
+	if($('.socialshareprivacy').length) {
+		$('.socialshareprivacy').socialSharePrivacy({
+			'services' : {
+				'facebook' : {
+					'sharer' : {
+						'status'    : 'on',
+						'dummy_img' : $('.socialshareprivacy').data('basepath') + '/images/dummy_facebook_share_de.png',
+						'img'       : $('.socialshareprivacy').data('basepath') + '/images/facebook_share_de.png'
+					}
+				},
+				twitter : {
+					'status' : 'on',
+					'dummy_img' : $('.socialshareprivacy').data('basepath') + '/images/dummy_twitter.png'
+				},
+				gplus : {
+					'status' : 'off'
 				}
 			},
-			twitter : {
-				'status' : 'on',
-				'dummy_img' : $('.socialshareprivacy').data('basepath') + '/images/dummy_twitter.png'
-			},
-			gplus : {
-				'status' : 'off'
-			}
-		},
-		'lang_path' : $('.socialshareprivacy').data('basepath') + '/lang/',
-		'css_path'	: $('.socialshareprivacy').data('basepath') +  '/socialshareprivacy.css',
-		'language'  : 'de',
-		'uri' 		: function(context) {return $(context).data('uri');},
-		'info_link'	: '/impressum.html'
-	});
+			'lang_path' : $('.socialshareprivacy').data('basepath') + '/lang/',
+			'css_path'	: $('.socialshareprivacy').data('basepath') +  '/socialshareprivacy.css',
+			'language'  : 'de',
+			'uri' 		: function(context) {return $(context).data('uri');},
+			'info_link'	: '/impressum.html'
+		});
+	}
 });
