@@ -79,6 +79,8 @@ page = Page {
 		javascripts.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScripts'
+
+			dpsgSettings = ${Configuration.setting('DPSG.CampGround')}
 		}
 	}
 }

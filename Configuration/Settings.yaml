@@ -3,3 +3,5 @@ DPSG:
     FacebookIntegration:
       PageId:
       AccessToken:
+    GoogleAnalytics:
+      TrackingId:
