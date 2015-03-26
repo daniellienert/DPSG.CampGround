@@ -21,9 +21,21 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 
 
 	/**
+	 * @var Boolean
+	 */
+	protected $configurationIsComplete = FALSE;
+
+
+	/**
 	 * @var string
 	 */
 	protected $fields = 'id,name,description,location,venue,timezone,start_time,end_time,cover';
+
+
+	public function initializeObject() {
+		$this->configurationIsComplete = $this->pageId != '' && $this->accessToken != '';
+	}
+
 
 	/**
 	 * @param integer $sinceDays
@@ -33,6 +45,11 @@ class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedView
 	 * @return string
 	 */
 	public function render($sinceDays = 7, $untilDays = 365, $maxEvents = 0, $coverType = 'square') {
+
+
+		if(!$this->configurationIsComplete) {
+			return 'Bitte trage die Facebook Page Id und dein AceessToken in die Settings ein.';
+		}
 
 		$events = $this->loadEvents($sinceDays, $untilDays, $maxEvents);
 
