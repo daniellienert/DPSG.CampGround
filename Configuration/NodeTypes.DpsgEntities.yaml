@@ -35,10 +35,10 @@
 
   properties:
     groupImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: 'Gruppenbild'
-        reloadIfChanged: true
+        reloadIfChanged: TRUE
         inspector:
           group: 'Stufe'
 
@@ -50,9 +50,9 @@
   childNodes:
   properties:
     'userImage':
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: 'Benutzerbild'
-        reloadIfChanged: true
+        reloadIfChanged: TRUE
         inspector:
           group: 'Leiter'

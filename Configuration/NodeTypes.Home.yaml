@@ -1,5 +1,8 @@
 'DPSG.CampGround::HomePage':
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  constraints:
+    nodeTypes:
+      '*': TRUE
   ui:
     label: 'Homepage'
   childNodes:
@@ -11,3 +14,12 @@
       defaultValue: 'Der Seitentitel'
       ui:
         inlineEditable: TRUE
+
+    infoheadl:
+      type: string
+      defaultValue: 'Headline'
+      ui:
+        label: 'Infowindow Headline'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
