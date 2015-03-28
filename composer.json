@@ -2,6 +2,7 @@
     "name": "dpsg/campground",
     "type": "typo3-flow-site",
     "description": "Neos site package providing a basis for dpsg pages.",
+    "homepage": "http://daniel.lienert.cc/projekte/dpsgcampground-dpsg-webseiten-mit-neos/",
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*"
