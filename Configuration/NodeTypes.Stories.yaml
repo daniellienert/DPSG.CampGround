@@ -90,7 +90,7 @@
           group: 'storyProperties'
 
     'storyHeaderImage':
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
       ui:
         label: 'Artikelbild'
         reloadIfChanged: true
