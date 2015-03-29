@@ -4,20 +4,14 @@ DPSG.CampGround
 DPSG Campground ist ein SitePackage für das Content Management System Neos. Das Paket bietet neben dem, an www.dpsg.de angelegten Vorlage jeder Menge spezielle Seitenelemente die in dieser Art auf den meisten DPSG Seiten vorkommen dürften:
 
 -   Eine Seite für Berichte, welche im Blogstil angezeigt werden. Die Artikel können Stufe zugeordnet werden.
-
 -   Stufenseiten mit einer Liste aller Berichte, welche es zu der jeweiligen Stufe gibt.
-
 -   Ein Slider und eine „Neueste Artikel“ Ansicht um die Berichte auf der Hauptseite zu präsentieren.
-
 -   Integration in Facebook. Facebook Events werden automatisch auf der Seite angezeigt.
-
- 
 
 Eine genaue Beschreibung des Pakets findet ihr auf http://daniel.lienert.cc
 
 Eine Instanz des Pakets befindet sich auf http://www.dpsg-urloffen.de
 
- 
 
 Installation
 ------------
@@ -55,8 +49,6 @@ Konfiguration
 
 Die Konfiguration deiner Seite befindet sich in der Datei: `Configuration/Settings.yaml`. Dort fügst du die folgende Konfigurationsstruktur hinzu:
 
- 
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DPSG:
   CampGround:
@@ -68,29 +60,26 @@ DPSG:
       TrackingId:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
-
 ### Facebook Integration
 
 Unter dem Schlüssel `FacebookIntegration` wird die Verbindung deiner Facebook Seite zur Homepage konfiguriert.
 
-+---------------+------------------------------------------+
 | Schlüsselwort | Bedeutung                                |
-+---------------+------------------------------------------+
+|---------------|------------------------------------------|
 | PageId        | Zur Integration deiner Facebookpage wird |
-|               | hier die Facebook Seiten-Id eingegeben.  |
-+---------------+------------------------------------------+
+|               | hier die Facebook Seiten Id eingegeben.  |
+|               |                                          |
 | PageName      | Der Facebook Seitenname                  |
-+---------------+------------------------------------------+
+|               |                                          |
 | AccessToken   | Das Facebook Accesstoken                 |
-+---------------+------------------------------------------+
+|               |                                          |
+
 
 ### Google Analytics
 
 Mit `GoogleAnalytics` wird die Integration der Seitenstatistik konfiguriert:
 
-+---------------+------------------------------+
 | Schlüsselwort | Bedeutung                    |
-+---------------+------------------------------+
+|---------------|------------------------------|
 | TrackingId    | Die Tracking Id deiner Seite |
-+---------------+------------------------------+
+|               |                              |
