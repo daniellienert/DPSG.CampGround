@@ -66,8 +66,7 @@ Unter dem Schlüssel `FacebookIntegration` wird die Verbindung deiner Facebook S
 
 | Schlüsselwort | Bedeutung                                |
 |---------------|------------------------------------------|
-| PageId        | Zur Integration deiner Facebookpage wird |
-|               | hier die Facebook Seiten Id eingegeben.  |
+| PageId        | Zur Integration deiner Facebookpage wird hier die Facebook Seiten Id eingegeben.|
 | PageName      | Der Facebook Seitenname                  |
 | AccessToken   | Das Facebook Accesstoken                 |
 
