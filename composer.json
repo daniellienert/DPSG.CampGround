@@ -7,8 +7,8 @@
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
-        "flowpack/simplesearch": "dev-master",
-        "flowpack/simplesearch-contentrepositoryadaptor": "dev-master"
+        "flowpack/simplesearch": "1.2.*",
+        "flowpack/simplesearch-contentrepositoryadaptor": "1.2.*"
     },
     "autoload": {
         "psr-0": {
