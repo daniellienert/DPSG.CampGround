@@ -78,3 +78,11 @@ Mit `GoogleAnalytics` wird die Integration der Seitenstatistik konfiguriert:
 | Schlüsselwort | Bedeutung                    |
 |---------------|------------------------------|
 | TrackingId    | Die Tracking Id deiner Seite |
+
+### Suchindex füllen
+
+Einige Listen werden mittels Suchanfragen gebildet. Für deren Funktion muss der Suchindex aufgebaut werden.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./flow nodeindex:flush; ./flow nodeindex:build
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
