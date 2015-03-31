@@ -4,14 +4,11 @@
     "description": "Neos site package providing a basis for dpsg pages.",
     "homepage": "http://daniel.lienert.cc/",
     "license": ["LGPL-3.0+"],
-    "repositories": [
-      {"type": "git", "url": "https://github.com/daniellienert/Flowpack.SimpleSearch.git"}
-    ],
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
         "typo3/typo3cr-search": "1.2.*",
-	    "flowpack/simplesearch": "1.2.x-dev#124f6ba957b5590527a1ef019214d4401e4d55ad",
+	"flowpack/simplesearch": "dev-master",
         "flowpack/simplesearch-contentrepositoryadaptor": "1.2.*"
     },
     "autoload": {
