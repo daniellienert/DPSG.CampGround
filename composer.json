@@ -8,7 +8,7 @@
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
         "typo3/typo3cr-search": "1.2.*",
-	"flowpack/simplesearch": "dev-master",
+	"flowpack/simplesearch": "1.2.*",
         "flowpack/simplesearch-contentrepositoryadaptor": "1.2.*"
     },
     "autoload": {
