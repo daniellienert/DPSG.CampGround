@@ -76,7 +76,7 @@
         inspector:
           group: storyProperties
     storyHeaderImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: Artikelbild
         reloadIfChanged: true

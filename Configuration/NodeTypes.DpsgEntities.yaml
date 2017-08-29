@@ -35,7 +35,7 @@
 
   properties:
     groupImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: 'Gruppenbild'
         reloadIfChanged: TRUE
@@ -50,7 +50,7 @@
   childNodes:
   properties:
     'userImage':
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: 'Benutzerbild'
         reloadIfChanged: TRUE
