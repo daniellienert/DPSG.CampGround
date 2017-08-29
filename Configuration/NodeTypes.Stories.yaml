@@ -1,154 +1,131 @@
 ##
 # Document NodeType "StoryList"
 #
-'DPSG.CampGround:StoryList':
-  superTypes: ['TYPO3.Neos:Document']
 
+'DPSG.CampGround:StoryList':
+  superTypes:
+    - 'TYPO3.Neos:Document'
   constraints:
     nodeTypes:
-      'DPSG.CampGround:Story': TRUE
-      '*': FALSE
-
+      'DPSG.CampGround:Story': true
+      '*': false
   childNodes:
-    'main':
+    main:
       type: 'TYPO3.Neos:ContentCollection'
-
   ui:
     label: 'Story List'
-    icon: 'icon-list-alt'
+    icon: icon-list-alt
   properties:
     sourceNode:
       type: reference
       ui:
         label: 'Liste an Einträgen'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'document'
-
-
-##
-# Document NodeType "Story"
-#
-
+          group: document
 'DPSG.CampGround:Story':
-  superTypes: ['TYPO3.Neos:Document']
-
+  superTypes:
+    - 'TYPO3.Neos:Document'
   childNodes:
-    'main':
+    main:
       type: 'TYPO3.Neos:ContentCollection'
-
   ui:
-    label: 'Bericht'
-    icon: 'icon-calendar'
+    label: Bericht
+    icon: icon-calendar
     inspector:
       groups:
         storyProperties:
-          label: 'Eigenschaften'
+          label: Eigenschaften
           position: 1
-
   properties:
     title:
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         inspector:
-          group: ~
-
+          group: null
     storyStartDate:
-      type: date
+      type: DateTime
       ui:
-        reloadIfChanged: FALSE
-        label: 'Startdatum'
+        reloadIfChanged: false
+        label: Startdatum
         inspector:
-          group: 'storyProperties'
-
+          group: storyProperties
     storyEndDate:
-      type: date
+      type: DateTime
       ui:
-        reloadIfChanged: FALSE
-        label: 'Enddatum'
+        reloadIfChanged: false
+        label: Enddatum
         inspector:
-          group: 'storyProperties'
-
+          group: storyProperties
     group:
       type: references
       ui:
-        reloadIfChanged: TRUE
-        label: 'Stufe'
+        reloadIfChanged: true
+        label: Stufe
         inspector:
-          group: 'storyProperties'
+          group: storyProperties
           editorOptions:
-            nodeTypes: ['DPSG.CampGround:Stufe']
-
-
+            nodeTypes:
+              - 'DPSG.CampGround:Stufe'
     author:
       type: string
       ui:
-        reloadIfChanged: FALSE
-        label: 'Autor'
+        reloadIfChanged: false
+        label: Autor
         inspector:
-          group: 'storyProperties'
-
-    'storyHeaderImage':
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+          group: storyProperties
+    storyHeaderImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
-        label: 'Artikelbild'
+        label: Artikelbild
         reloadIfChanged: true
         inspector:
-          group: 'storyProperties'
+          group: storyProperties
       search:
         elasticSearchMapping:
           type: string
           include_in_all: false
         indexing: '${(node.properties.storyHeaderImage ? "set" : "missing")}'
-
-
-##
-# Story Teaser
-#
 'DPSG.CampGround:StorySlider':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Artikel Slider'
     inspector:
       groups:
-        'stories':
-          label: 'Artikel'
+        stories:
+          label: Artikel
           position: 10
-
   properties:
     numberOfArticles:
       type: integer
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/IntegerValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
+        TYPO3.Neos/Validation/IntegerValidator: {  }
       ui:
         label: 'Anzahl Artikel'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'stories'
-
-##
-# Latest Articles
-#
+          group: stories
 'DPSG.CampGround:LatestStories':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Aktuelle Berichte'
     inspector:
       groups:
-        'latestStories':
+        latestStories:
           label: 'Aktuelle Berichte'
           position: 1
-
   properties:
     numberOfArticles:
       type: integer
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/IntegerValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
+        TYPO3.Neos/Validation/IntegerValidator: {  }
       ui:
         label: 'Anzahl Berichte'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'latestStories'
+          group: latestStories
