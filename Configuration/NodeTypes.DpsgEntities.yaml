@@ -1,58 +1,54 @@
+
 'DPSG.CampGround:GroupOverview':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    'TYPO3.Neos:Document': true
   constraints:
     nodeTypes:
-      'DPSG.CampGround:Stufe': TRUE
-      '*': FALSE
-
+      'DPSG.CampGround:Stufe': true
+      '*': false
   childNodes:
-    'main':
+    main:
       type: 'TYPO3.Neos:ContentCollection'
-
   ui:
-    label: 'Stufenübersicht'
-    icon: 'icon-home'
-
-
+    label: Stufenübersicht
+    icon: icon-home
 'DPSG.CampGround:Stufe':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    'TYPO3.Neos:Document': true
   constraints:
     nodeTypes:
-      '*': FALSE
-
+      '*': false
   childNodes:
-    'main':
+    main:
       type: 'TYPO3.Neos:ContentCollection'
-
   ui:
-    label: 'Stufe'
-    icon: 'icon-group'
+    label: Stufe
+    icon: icon-group
     inspector:
       groups:
         Stufe:
-          label: 'Eigenschaften'
+          label: Eigenschaften
           position: 1
-
   properties:
     groupImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: 'Gruppenbild'
-        reloadIfChanged: TRUE
+        label: Gruppenbild
+        reloadIfChanged: true
         inspector:
-          group: 'Stufe'
-
+          group: Stufe
 'DPSG.CampGround::Leiter':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    'TYPO3.Neos:Document': true
   ui:
-    label: 'Leiter'
-    icon: 'icon-user'
-  childNodes:
+    label: Leiter
+    icon: icon-user
+  childNodes: null
   properties:
-    'userImage':
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+    userImage:
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: 'Benutzerbild'
-        reloadIfChanged: TRUE
+        label: Benutzerbild
+        reloadIfChanged: true
         inspector:
-          group: 'Leiter'
+          group: Leiter

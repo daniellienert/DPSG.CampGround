@@ -1,61 +1,63 @@
+
 'DPSG.CampGround:FacebookEvents':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Facebook Events'
-    icon: 'icon-calendar'
+    icon: icon-calendar
     inspector:
       groups:
-        'facebookevents':
-          label: 'Events'
+        facebookevents:
+          label: Events
           position: 1
   properties:
     mode:
       type: string
-      defaultValue: 'teaser'
+      defaultValue: teaser
       ui:
         label: 'Display Mode'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'facebookevents'
+          group: facebookevents
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            placeholder: 'Teaser'
+            placeholder: Teaser
             values:
               '':
                 label: ''
               teaser:
-                label: 'Teaser'
+                label: Teaser
               full:
                 label: 'Full List'
     title:
       type: string
       defaultValue: 'Next Events'
       ui:
-        label: 'Titel'
-        reloadIfChanged: TRUE
+        label: Titel
+        reloadIfChanged: true
         inspector:
-          group: 'facebookevents'
+          group: facebookevents
     sinceDays:
       type: integer
       defaultValue: 7
       ui:
         label: 'Since Days'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'facebookevents'
+          group: facebookevents
     untilDays:
       type: integer
       defaultValue: 365
       ui:
         label: 'Until Days'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'facebookevents'
+          group: facebookevents
     maxEvents:
       type: integer
       defaultValue: 3
       ui:
         label: 'Max events to display'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'facebookevents'
+          group: facebookevents

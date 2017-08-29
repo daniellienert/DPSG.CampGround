@@ -4,7 +4,7 @@
 
 'DPSG.CampGround:StoryList':
   superTypes:
-    - 'TYPO3.Neos:Document'
+    'TYPO3.Neos:Document': true
   constraints:
     nodeTypes:
       'DPSG.CampGround:Story': true
@@ -25,7 +25,7 @@
           group: document
 'DPSG.CampGround:Story':
   superTypes:
-    - 'TYPO3.Neos:Document'
+    'TYPO3.Neos:Document': true
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
@@ -89,7 +89,7 @@
         indexing: '${(node.properties.storyHeaderImage ? "set" : "missing")}'
 'DPSG.CampGround:StorySlider':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Artikel Slider'
     inspector:
@@ -110,7 +110,7 @@
           group: stories
 'DPSG.CampGround:LatestStories':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Aktuelle Berichte'
     inspector:

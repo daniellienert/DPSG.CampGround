@@ -1,25 +1,26 @@
+
 'DPSG.CampGround::HomePage':
-  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Page': true
   constraints:
     nodeTypes:
-      '*': TRUE
+      '*': true
   ui:
-    label: 'Homepage'
+    label: Homepage
   childNodes:
     footer:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     siteTitle:
-      type: 'string'
+      type: string
       defaultValue: 'Der Seitentitel'
       ui:
-        inlineEditable: TRUE
-
+        inlineEditable: true
     infoheadl:
       type: string
-      defaultValue: 'Headline'
+      defaultValue: Headline
       ui:
         label: 'Infowindow Headline'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'document'
+          group: document
