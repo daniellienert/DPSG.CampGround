@@ -74,9 +74,10 @@
         reloadIfChanged: false
         label: Autor
         inspector:
-          group: storyProperties
-    storyHeaderImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+          group: 'storyProperties'
+
+    'storyHeaderImage':
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: Artikelbild
         reloadIfChanged: true

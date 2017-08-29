@@ -31,7 +31,7 @@
           position: 1
   properties:
     groupImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: Gruppenbild
         reloadIfChanged: true
