@@ -9,7 +9,7 @@ prototype(DPSG.CampGround:Stufe) < prototype(Neos.Fusion:Template) {
 	// simpleSearch version
 	groupStories = ${Array.slice(Search.query(site).nodeType('DPSG.CampGround:Story').like('group', node.identifier).sortDesc('storyStartDate').limit(10).execute(),0,10)}
 
-	content = TYPO3.Neos:ContentCollection {
+	content = Neos.Neos:ContentCollection {
 		nodePath = 'main'
 		@cache.mode = 'cached'
 	}
@@ -22,7 +22,7 @@ prototype(DPSG.CampGround:Stufe) < prototype(Neos.Fusion:Template) {
 	}
 }
 
-prototype(TYPO3.Neos:PrimaryContent).Stufe {
+prototype(Neos.Neos:PrimaryContent).Stufe {
 	condition = ${q(node).is('[instanceof DPSG.CampGround:Stufe]')}
 	type = 'DPSG.CampGround:Stufe'
 }

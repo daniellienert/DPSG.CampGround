@@ -12,7 +12,7 @@ prototype(DPSG.CampGround:GroupOverview) < prototype(Neos.Fusion:Template) {
 	}
 }
 
-prototype(TYPO3.Neos:PrimaryContent).GroupOverview {
+prototype(Neos.Neos:PrimaryContent).GroupOverview {
 	condition = ${q(node).is('[instanceof DPSG.CampGround:GroupOverview]')}
 	type = 'DPSG.CampGround:GroupOverview'
 }

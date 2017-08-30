@@ -1,4 +1,4 @@
-prototype(DPSG.CampGround:FacebookEvents) < prototype(TYPO3.Neos:Content) {
+prototype(DPSG.CampGround:FacebookEvents) < prototype(Neos.Neos:Content) {
 	templatePath = ${'resource://DPSG.CampGround/Private/Templates/NodeTypes/Facebook/' + (q(node).property('mode') == 'teaser' ? 'FacebookEventsTeaser.html' : 'FacebookEvents.html')}
 
 	@cache {

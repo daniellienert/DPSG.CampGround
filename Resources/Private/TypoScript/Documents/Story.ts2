@@ -13,7 +13,7 @@ prototype(DPSG.CampGround:Story) < prototype(Neos.Fusion:Template) {
 	firstTextPart = ${q(node).find('[instanceof Neos.NodeTypes:Text]').property('text')}
 	title = ${q(node).property('title')}
 
-    content = TYPO3.Neos:ContentCollection {
+    content = Neos.Neos:ContentCollection {
 		nodePath = 'main'
 		@cache.mode = 'cached'
 	}
@@ -23,7 +23,7 @@ prototype(DPSG.CampGround:Story) < prototype(Neos.Fusion:Template) {
     nextStory = ${q(node).next('[instanceof DPSG.CampGround:Story]').get(0)}
 }
 
-prototype(TYPO3.Neos:PrimaryContent).Story {
+prototype(Neos.Neos:PrimaryContent).Story {
 	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
 	type = 'DPSG.CampGround:Story'
 }

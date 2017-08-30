@@ -50,7 +50,7 @@ prototype(DPSG.CampGround:StoryListHtml) < prototype(DPSG.CampGround:StoryListCo
 	attributes.class = 'blog-feed'
 }
 
-prototype(TYPO3.Neos:PrimaryContent).StoryList {
+prototype(Neos.Neos:PrimaryContent).StoryList {
 	condition = ${q(node).is('[instanceof DPSG.CampGround:StoryList]')}
 	type = 'DPSG.CampGround:StoryListHtml'
 }

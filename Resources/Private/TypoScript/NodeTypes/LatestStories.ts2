@@ -30,7 +30,7 @@ prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
 
 	node = ${node}
 
-	content = TYPO3.Neos:ContentCollection {
+	content = Neos.Neos:ContentCollection {
 		nodePath = 'main'
 		@cache.mode = 'cached'
 	}
@@ -39,7 +39,7 @@ prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
 	teaserText = ${String.cropAtWord(q(node).find('main').children().find('[instanceof Neos.NodeTypes:Text]').first().property('text'), 200, ' ...')}
 }
 
-prototype(TYPO3.Neos:PrimaryContent).Story {
+prototype(Neos.Neos:PrimaryContent).Story {
 	condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
 	type = 'DPSG.CampGround:Story'
 }
