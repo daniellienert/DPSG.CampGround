@@ -4,14 +4,14 @@
 
 'DPSG.CampGround:StoryList':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   constraints:
     nodeTypes:
       'DPSG.CampGround:Story': true
       '*': false
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: 'Story List'
     icon: icon-list-alt
@@ -25,10 +25,10 @@
           group: document
 'DPSG.CampGround:Story':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: Bericht
     icon: icon-calendar
@@ -90,7 +90,7 @@
         indexing: '${(node.properties.storyHeaderImage ? "set" : "missing")}'
 'DPSG.CampGround:StorySlider':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Artikel Slider'
     inspector:
@@ -102,8 +102,8 @@
     numberOfArticles:
       type: integer
       validation:
-        TYPO3.Neos/Validation/NotEmptyValidator: {  }
-        TYPO3.Neos/Validation/IntegerValidator: {  }
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/IntegerValidator: {  }
       ui:
         label: 'Anzahl Artikel'
         reloadIfChanged: true
@@ -111,7 +111,7 @@
           group: stories
 'DPSG.CampGround:LatestStories':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Aktuelle Berichte'
     inspector:
@@ -123,8 +123,8 @@
     numberOfArticles:
       type: integer
       validation:
-        TYPO3.Neos/Validation/NotEmptyValidator: {  }
-        TYPO3.Neos/Validation/IntegerValidator: {  }
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/IntegerValidator: {  }
       ui:
         label: 'Anzahl Berichte'
         reloadIfChanged: true

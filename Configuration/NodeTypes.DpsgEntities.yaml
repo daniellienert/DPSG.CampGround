@@ -1,26 +1,26 @@
 
 'DPSG.CampGround:GroupOverview':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   constraints:
     nodeTypes:
       'DPSG.CampGround:Stufe': true
       '*': false
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: Stufenübersicht
     icon: icon-home
 'DPSG.CampGround:Stufe':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   constraints:
     nodeTypes:
       '*': false
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: Stufe
     icon: icon-group
@@ -39,7 +39,7 @@
           group: Stufe
 'DPSG.CampGround::Leiter':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   ui:
     label: Leiter
     icon: icon-user

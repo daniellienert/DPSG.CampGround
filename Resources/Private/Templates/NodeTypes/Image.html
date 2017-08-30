@@ -1,4 +1,4 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
 <div{attributes -> f:format.raw()}>
 	<figure{f:if(condition: imageClassName, then: ' class="{imageClassName}"')}>
@@ -26,7 +26,7 @@
 		<f:else>
 			<f:security.ifAccess privilegeTarget="TYPO3_Neos_Backend_GeneralAccess">
 				<f:if condition="{node.context.workspace.name} != 'live'">
-					<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" title="Dummy image"
+					<img src="{f:uri.resource(package: 'Neos.Neos', path: 'Images/dummy-image.png')}" title="Dummy image"
 						 alt="Dummy image" class="neos-handle"/>
 				</f:if>
 			</f:security.ifAccess>

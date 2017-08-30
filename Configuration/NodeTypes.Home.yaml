@@ -9,7 +9,7 @@
     label: Homepage
   childNodes:
     footer:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     siteTitle:
       type: string

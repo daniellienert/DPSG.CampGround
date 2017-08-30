@@ -1,7 +1,7 @@
 
 'DPSG.CampGround:FacebookEvents':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Facebook Events'
     icon: icon-calendar

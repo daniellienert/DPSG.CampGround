@@ -2,7 +2,7 @@
 
 'DPSG.CampGround:GoogleMap':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Google Map'
     icon: icon-map-marker
