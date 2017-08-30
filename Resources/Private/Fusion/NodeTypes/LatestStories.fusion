@@ -36,7 +36,7 @@ prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
     }
 
     storyDate = ${q(node).property('storyStartDate') ? q(node).property('storyStartDate') : q(node).property('lastModified')}
-    teaserText = ${String.cropAtWord(q(node).find('main').children().find('[instanceof Neos.NodeTypes:Text]').first().property('text'), 200, ' ...')}
+    teaserText = ${String.cropAtWord(q(node).find('main').find('[instanceof Neos.NodeTypes:Text]').first().property('text'), 200, ' ...')}
 }
 
 prototype(Neos.Neos:PrimaryContent).Story {

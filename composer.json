@@ -7,11 +7,9 @@
         "LGPL-3.0+"
     ],
     "require": {
-        "typo3/neos": "^3.1",
-        "typo3/neos-nodetypes": "*",
-        "typo3/typo3cr-search": "*",
-        "flowpack/simplesearch": "*",
-        "flowpack/simplesearch-contentrepositoryadaptor": "*"
+        "neos/neos": "^3.2",
+        "dl/gallery": "^2.0",
+        "jonnitto/prettyembedyoutube": "^3.0"
     },
     "autoload": {
         "psr-0": {
