@@ -3,7 +3,7 @@ namespace DPSG\CampGround\ViewHelpers;
 
 use Neos\Flow\Annotations as Flow;
 
-class MultiColumnViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
+class MultiColumnViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractTagBasedViewHelper {
 
 	/**
 	 * @var string
@@ -33,14 +33,14 @@ class MultiColumnViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBase
 	 * @param string $columnTag
 	 * @param string $direction
 	 *
-	 * @throws \TYPO3\Fluid\Exception
+	 * @throws \Neos\FluidAdaptor\Exception
 	 * @return string
 	 */
 	public function render(array $each, $as, $columns = 0, $itemsPerColumn = 0, $columnWidth = 200, $rowTag = 'div', $columnTag = 'div', $direction = 'vertical') {
 		$itemCount = count($each);
 
 		if($columns !== 0 && $itemsPerColumn !==0 || $columns == 0 && $itemsPerColumn == 0) {
-			throw new \TYPO3\Fluid\Exception('You have to define either $columns or $itemsPerColumn', 1421582949);
+			throw new \Neos\FluidAdaptor\Exception('You have to define either $columns or $itemsPerColumn', 1421582949);
 		}
 
 		if($columns > 0) {

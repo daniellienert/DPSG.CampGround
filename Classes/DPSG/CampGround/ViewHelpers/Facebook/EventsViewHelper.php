@@ -3,7 +3,7 @@ namespace DPSG\CampGround\ViewHelpers\Facebook;
 
 use Neos\Flow\Annotations as Flow;
 
-class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
+class EventsViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractTagBasedViewHelper {
 
 
 	/**
