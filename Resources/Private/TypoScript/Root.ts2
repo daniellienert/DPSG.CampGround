@@ -33,7 +33,7 @@ page = Page {
 
 			node = ${node}
 			siteTitle = ${q(site).property('siteTitle')}
-			pageDescription = ${String.cropAtWord(String.stripTags(q(node).find('main').children().find('[instanceof TYPO3.Neos.NodeTypes:Text]').first().property('text')), 200, ' ...')}
+			pageDescription = ${String.cropAtWord(String.stripTags(q(node).find('main').children().find('[instanceof Neos.NodeTypes:Text]').first().property('text')), 200, ' ...')}
 
 			pageImage = DPSG.CampGround:PageImage
 		}
@@ -87,5 +87,5 @@ page = Page {
 }
 
 
-prototype(TYPO3.Neos.NodeTypes:Menu).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'
-prototype(TYPO3.Neos.NodeTypes:Image).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Image.html'
+prototype(Neos.NodeTypes:Menu).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'
+prototype(Neos.NodeTypes:Image).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Image.html'

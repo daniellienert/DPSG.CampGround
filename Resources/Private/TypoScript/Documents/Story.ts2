@@ -10,7 +10,7 @@ prototype(DPSG.CampGround:Story) < prototype(Neos.Fusion:Template) {
 
     node = ${node}
 
-	firstTextPart = ${q(node).find('[instanceof TYPO3.Neos.NodeTypes:Text]').property('text')}
+	firstTextPart = ${q(node).find('[instanceof Neos.NodeTypes:Text]').property('text')}
 	title = ${q(node).property('title')}
 
     content = TYPO3.Neos:ContentCollection {
