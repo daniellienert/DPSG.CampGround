@@ -2,35 +2,37 @@
 {namespace media=Neos\Media\ViewHelpers}
 
 <div id="story-carousel" class="carousel slide story-carousel carousel-fade>" data-ride="carousel">
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<f:for each="{stories}" as="story" iteration="iteration">
-			<li data-target="#story-carousel" data-slide-to="{iteration.index}" class="{f:if(condition: iteration.isFirst, then: 'active')}"></li>
-		</f:for>
-	</ol>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <f:for each="{stories}" as="story" iteration="iteration">
+            <li data-target="#story-carousel" data-slide-to="{iteration.index}"
+                class="{f:if(condition: iteration.isFirst, then: 'active')}"></li>
+        </f:for>
+    </ol>
 
 
-	<!-- Wrapper for slides -->
-	<div class="carousel-inner">
-		<f:for each="{stories}" as="story" iteration="iteration">
-			<div class="item{f:if(condition: iteration.isFirst, then: ' active')}">
-				<neos:link.node node="{story}">
-					<f:if condition="{story.properties.storyHeaderImage}">
-						<media:image asset="{story.properties.storyHeaderImage}" alt="{story.properties.title}" maximumWidth="736" maximumHeight="411" allowCropping="TRUE" allowUpScaling="TRUE"/>
-					</f:if>
-					<div class="carousel-caption">
-						<h3>{story.properties.title}</h3>
-					</div>
-				</neos:link.node>
-			</div>
-		</f:for>
-	</div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <f:for each="{stories}" as="story" iteration="iteration">
+            <div class="item{f:if(condition: iteration.isFirst, then: ' active')}">
+                <neos:link.node node="{story}">
+                    <f:if condition="{story.properties.storyHeaderImage}">
+                        <media:image image="{story.properties.storyHeaderImage}" alt="{story.properties.title}"
+                                     maximumWidth="736" maximumHeight="411" allowCropping="TRUE" allowUpScaling="TRUE"/>
+                    </f:if>
+                    <div class="carousel-caption">
+                        <h3>{story.properties.title}</h3>
+                    </div>
+                </neos:link.node>
+            </div>
+        </f:for>
+    </div>
 
-	<!-- Controls -->
-	<a class="left carousel-control" href="#story-carousel" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-	</a>
-	<a class="right carousel-control" href="#story-carousel" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right"></span>
-	</a>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#story-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#story-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
 </div> <!-- Carousel -->

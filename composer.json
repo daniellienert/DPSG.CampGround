@@ -1,13 +1,13 @@
 {
     "name": "dpsg/campground",
-    "type": "typo3-flow-site",
+    "type": "neos-site",
     "description": "Neos site package providing a basis for dpsg pages.",
     "homepage": "http://daniel.lienert.cc/",
     "license": [
         "LGPL-3.0+"
     ],
     "require": {
-        "typo3/neos": "*",
+        "typo3/neos": "^3.1",
         "typo3/neos-nodetypes": "*",
         "typo3/typo3cr-search": "*",
         "flowpack/simplesearch": "*",

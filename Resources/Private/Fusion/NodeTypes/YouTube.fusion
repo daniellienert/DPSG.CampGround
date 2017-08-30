@@ -2,5 +2,5 @@
 # "YouTube" element
 #
 prototype(DPSG.CampGround:YouTube) < prototype(Neos.Neos:Content) {
-	attributes.class = 'responsive-video'
+    attributes.class = 'responsive-video'
 }

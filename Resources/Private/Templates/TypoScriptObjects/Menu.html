@@ -3,46 +3,52 @@
 {namespace dpsg=DPSG\CampGround\ViewHelpers}
 
 <div class="navbar navbar-default" role="navigation">
-	<div class="container">
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="nav-home">
-					<neos:link.node node="{site}"><span>{siteTitle}</span></neos:link.node>
-				</li>
-				<f:render section="itemsList" arguments="{items: items}" />
-			</ul>
-		</div>
-	</div>
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-home">
+                    <neos:link.node node="{site}"><span>{siteTitle}</span></neos:link.node>
+                </li>
+                <f:render section="itemsList" arguments="{items: items}"/>
+            </ul>
+        </div>
+    </div>
 </div>
 
 
 <f:section name="itemsList">
-	<f:for each="{items}" as="item">
-		<f:if condition="{item.subItems}">
-			<f:then>
-				<li class="dropdown">
-					<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-					<ul class="dropdown-menu">
-						<f:render section="subItemsList" arguments="{items: item.subItems, parent:item}" />
-					</ul>
-				</li>
-			</f:then>
-			<f:else>
-				<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
-					<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-				</li>
-			</f:else>
-		</f:if>
-	</f:for>
+    <f:for each="{items}" as="item">
+        <f:if condition="{item.subItems}">
+            <f:then>
+                <li class="dropdown">
+                    <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+                    <ul class="dropdown-menu">
+                        <f:render section="subItemsList" arguments="{items: item.subItems, parent:item}"/>
+                    </ul>
+                </li>
+            </f:then>
+            <f:else>
+                <li
+                {ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+                <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+                </li>
+            </f:else>
+        </f:if>
+    </f:for>
 </f:section>
 
 
 <f:section name="subItemsList">
-		<dpsg:multiColumn each="{items}" as="item" itemsPerColumn="12" columnTag="ul">
-			<f:if condition="{newRow}"><div class="row" style="width:{containerWidth}px;"></f:if>
-			<f:if condition="{newColumn}"><ul class="dropdown-column col-md-{gridSpan}"></f:if>
-			<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
-				<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-			</li>
-		</dpsg:multiColumn>
+    <dpsg:multiColumn each="{items}" as="item" itemsPerColumn="12" columnTag="ul">
+        <f:if condition="{newRow}">
+            <div class="row" style="width:{containerWidth}px;">
+        </f:if>
+        <f:if condition="{newColumn}">
+            <ul class="dropdown-column col-md-{gridSpan}">
+        </f:if>
+        <li
+        {ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+        <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+        </li>
+    </dpsg:multiColumn>
 </f:section>

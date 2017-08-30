@@ -1,48 +1,50 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
 <article class="story">
-	<div class="row">
+    <div class="row">
 
-		<div class="col-md-9">
+        <div class="col-md-9">
 
-			<neos:link.node node="{node}">
-				<h2>{title}</h2>
-			</neos:link.node>
+            <neos:link.node node="{node}">
+                <h2>{title}</h2>
+            </neos:link.node>
 
-			<div class="story-header-image">
-				<figure>
-					<neos:link.node node="{node}">
-						<f:if condition="{node.properties.storyHeaderImage}">
-							<f:then>
-								<media:image image="{node.properties.storyHeaderImage}" alt="{node.properties.title}"
-										 title="{node.properties.title}" maximumWidth="820" maximumHeight="350" allowCropping="TRUE"/>
-							</f:then>
-							<f:else>
-								<img src="{f:uri.resource(path: 'Images/HeaderImagePlaceHolder.jpg' package:'DPSG.CampGround')}" title="{node.properties.title}">
-							</f:else>
-						</f:if>
-					</neos:link.node>
-				</figure>
-			</div>
+            <div class="story-header-image">
+                <figure>
+                    <neos:link.node node="{node}">
+                        <f:if condition="{node.properties.storyHeaderImage}">
+                            <f:then>
+                                <media:image image="{node.properties.storyHeaderImage}" alt="{node.properties.title}"
+                                             title="{node.properties.title}" maximumWidth="820" maximumHeight="350"
+                                             allowCropping="TRUE"/>
+                            </f:then>
+                            <f:else>
+                                <img src="{f:uri.resource(path: 'Images/HeaderImagePlaceHolder.jpg' package:'DPSG.CampGround')}"
+                                     title="{node.properties.title}">
+                            </f:else>
+                        </f:if>
+                    </neos:link.node>
+                </figure>
+            </div>
 
-			<div class="story-teaser-text">
-				{firstTextPart -> f:format.raw()}
-			</div>
+            <div class="story-teaser-text">
+                {firstTextPart -> f:format.raw()}
+            </div>
 
-			<p>
-				<neos:link.node node="{node}" class="btn">Weiterlesen</neos:link.node>
-			</p>
+            <p>
+                <neos:link.node node="{node}" class="btn">Weiterlesen</neos:link.node>
+            </p>
 
-		</div>
+        </div>
 
-		<div class="col-md-3">
-			<f:render partial="StoryMetaBox" arguments="{_all}" />
-		</div>
+        <div class="col-md-3">
+            <f:render partial="StoryMetaBox" arguments="{_all}"/>
+        </div>
 
-		<footer>
-			<f:if condition="{showSocialButtons}">
-				<f:render partial="SocialButtons" arguments="{_all}" />
-			</f:if>
-		</footer>
-	</div>
+        <footer>
+            <f:if condition="{showSocialButtons}">
+                <f:render partial="SocialButtons" arguments="{_all}"/>
+            </f:if>
+        </footer>
+    </div>
 </article>

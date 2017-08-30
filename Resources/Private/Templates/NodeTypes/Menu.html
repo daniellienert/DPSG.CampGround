@@ -3,11 +3,16 @@
 {namespace dpsg=DPSG\CampGround\ViewHelpers}
 
 <nav{attributes -> f:format.raw()}>
-	<dpsg:multiColumn each="{items}" as="item" itemsPerColumn="12" columnTag="ul">
-		<f:if condition="{newRow}"><div class="row"></f:if>
-		<f:if condition="{newColumn}"><ul class="nav nav-pills nav-stacked col-md-{gridSpan}"></f:if>
-		<li{ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
-			<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-		</li>
-	</dpsg:multiColumn>
+<dpsg:multiColumn each="{items}" as="item" itemsPerColumn="12" columnTag="ul">
+    <f:if condition="{newRow}">
+        <div class="row">
+    </f:if>
+    <f:if condition="{newColumn}">
+        <ul class="nav nav-pills nav-stacked col-md-{gridSpan}">
+    </f:if>
+    <li
+    {ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+    <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+    </li>
+</dpsg:multiColumn>
 </nav>

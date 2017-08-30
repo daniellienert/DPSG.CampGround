@@ -1,7 +1,0 @@
-prototype(DPSG.CampGround:FacebookEvents) < prototype(Neos.Neos:Content) {
-	templatePath = ${'resource://DPSG.CampGround/Private/Templates/NodeTypes/Facebook/' + (q(node).property('mode') == 'teaser' ? 'FacebookEventsTeaser.html' : 'FacebookEvents.html')}
-
-	@cache {
-		maximumLifetime = '86400'
-	}
-}

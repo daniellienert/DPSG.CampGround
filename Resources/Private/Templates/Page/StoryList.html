@@ -1,12 +1,13 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 
 <f:section name="feed">
-	<section{attributes -> f:format.raw()}>
-		<header>
-			<neos:contentElement.editable property="title" tag="h1" />
-		</header>
+    <section
+    {attributes -> f:format.raw()}>
+    <header>
+        <neos:contentElement.editable property="title" tag="h1"/>
+    </header>
 
-		{entries -> f:format.raw()}
+    {entries -> f:format.raw()}
 
-	</section>
+    </section>
 </f:section>

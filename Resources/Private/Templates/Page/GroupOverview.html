@@ -4,48 +4,54 @@
 
 <div class="row">
 
-	<div class="col-md-9">
-		<neos:contentElement.wrap node="{node}">
-			<h1>
-				{neos:contentElement.editable(property: 'title')}
-			</h1>
-		</neos:contentElement.wrap>
+    <div class="col-md-9">
+        <neos:contentElement.wrap node="{node}">
+            <h1>
+                {neos:contentElement.editable(property: 'title')}
+            </h1>
+        </neos:contentElement.wrap>
 
-		<dpsg:multiColumn each="{groupNodes}" as="groupNode" columns="2" direction="horizontal">
-			<f:if condition="{newRow}"><div class="row"></f:if>
-			<f:if condition="{newColumn}"><div class="col-md-{gridSpan}"></f:if>
+        <dpsg:multiColumn each="{groupNodes}" as="groupNode" columns="2" direction="horizontal">
+            <f:if condition="{newRow}">
+                <div class="row">
+            </f:if>
+            <f:if condition="{newColumn}">
+                <div class="col-md-{gridSpan}">
+            </f:if>
 
-			<h2>{groupNode.properties.title}</h2>
-			<div class="typo3-neos-nodetypes-image">
-				<neos:link.node node="{groupNode}">
-					<figure>
-						<f:if condition="{groupNode.properties.groupImage}">
-							<media:image image="{groupNode.properties.groupImage}" alt="{groupNode.properties.groupImage.alternativeText}"
-										 title="{f:if(condition:groupNode.properties.groupImage.title, then:groupNode.properties.groupImage.title, else:groupNode.properties.title)}"
-										 maximumWidth="400" maximumHeight="260" allowCropping="TRUE"/>
-						</f:if>
-					</figure>
-				</neos:link.node>
-			</div>
+            <h2>{groupNode.properties.title}</h2>
+            <div class="typo3-neos-nodetypes-image">
+                <neos:link.node node="{groupNode}">
+                    <figure>
+                        <f:if condition="{groupNode.properties.groupImage}">
+                            <media:image image="{groupNode.properties.groupImage}"
+                                         alt="{groupNode.properties.groupImage.alternativeText}"
+                                         title="{f:if(condition:groupNode.properties.groupImage.title, then:groupNode.properties.groupImage.title, else:groupNode.properties.title)}"
+                                         maximumWidth="400" maximumHeight="260" allowCropping="TRUE"/>
+                        </f:if>
+                    </figure>
+                </neos:link.node>
+            </div>
 
-			<p>
-				<neos:link.node node="{groupNode}" class="btn">Zur Seite der {groupNode.properties.title}</neos:link.node>
-			</p>
-		</dpsg:multiColumn>
+            <p>
+                <neos:link.node node="{groupNode}" class="btn">Zur Seite der {groupNode.properties.title}
+                </neos:link.node>
+            </p>
+        </dpsg:multiColumn>
 
-		{content -> f:format.raw()}
-	</div>
+        {content -> f:format.raw()}
+    </div>
 
-	<div class="col-md-3">
-		<nav>
-			<ul class="nav nav-pills nav-stacked">
-				<f:for each="{groupNodes}" as="groupNode">
-					<li>
-						<neos:link.node node="{groupNode}">{groupNode.properties.title}</neos:link.node>
-					</li>
-				</f:for>
-			</ul>
-		</nav>
-	</div>
+    <div class="col-md-3">
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <f:for each="{groupNodes}" as="groupNode">
+                    <li>
+                        <neos:link.node node="{groupNode}">{groupNode.properties.title}</neos:link.node>
+                    </li>
+                </f:for>
+            </ul>
+        </nav>
+    </div>
 </div>
 

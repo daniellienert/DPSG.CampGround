@@ -4,29 +4,29 @@
 
 <div class="row">
 
-	<div class="col-md-9">
-		<neos:contentElement.wrap node="{node}">
-			<h1>
-				{neos:contentElement.editable(property: 'title')}
-			</h1>
-		</neos:contentElement.wrap>
+    <div class="col-md-9">
+        <neos:contentElement.wrap node="{node}">
+            <h1>
+                {neos:contentElement.editable(property: 'title')}
+            </h1>
+        </neos:contentElement.wrap>
 
-		<f:render partial="HeaderImage" arguments="{headerImage:node.properties.groupImage, node:node}" />
+        <f:render partial="HeaderImage" arguments="{headerImage:node.properties.groupImage, node:node}"/>
 
-		{content -> f:format.raw()}
-	</div>
+        {content -> f:format.raw()}
+    </div>
 
-	<div class="col-md-3">
-		<h3>Was wir tun</h3>
-		<nav>
-			<ul class="nav nav-pills nav-stacked">
-				<f:for each="{groupStories}" as="groupStory">
-					<li>
-						<neos:link.node node="{groupStory}">{groupStory.properties.title}</neos:link.node>
-					</li>
-				</f:for>
-			</ul>
-		</nav>
-	</div>
+    <div class="col-md-3">
+        <h3>Was wir tun</h3>
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <f:for each="{groupStories}" as="groupStory">
+                    <li>
+                        <neos:link.node node="{groupStory}">{groupStory.properties.title}</neos:link.node>
+                    </li>
+                </f:for>
+            </ul>
+        </nav>
+    </div>
 </div>
 

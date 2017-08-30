@@ -4,46 +4,51 @@
 {namespace media=Neos\Media\ViewHelpers}
 <html>
 <head>
-	<f:section name="stylesheets">
-		<link rel="stylesheet" href="Resources/Public/Styles/Main.css">
-		<f:if condition="{node.context.workspace.name} != 'live'">
-			<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Backend.css', package: 'DPSG.CampGround')}" media="all"/>
-		</f:if>
-	</f:section>
+    <f:section name="stylesheets">
+        <link rel="stylesheet" href="Resources/Public/Styles/Main.css">
+        <f:if condition="{node.context.workspace.name} != 'live'">
+            <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Backend.css', package: 'DPSG.CampGround')}"
+                  media="all"/>
+        </f:if>
+    </f:section>
 
-	<f:section name="headScripts"></f:section>
+    <f:section name="headScripts"></f:section>
 
-	<f:section name="metadata">
-		<meta property="og:title" content="{node.properties.title}" />
-		<meta property="og:url" content="{neos:uri.node(absolute: true, node: node, format: 'html')}" />
-		<meta property="og:site_name" content="{siteTitle}" />
-		<f:if condition="{pageDescription}"><meta property="og:description" content="{pageDescription}" /></f:if>
-		<f:if condition="{pageImage}"><meta property="og:image" content="{media:uri.image(asset:pageImage)}" /></f:if>
-	</f:section>
+    <f:section name="metadata">
+        <meta property="og:title" content="{node.properties.title}"/>
+        <meta property="og:url" content="{neos:uri.node(absolute: true, node: node, format: 'html')}"/>
+        <meta property="og:site_name" content="{siteTitle}"/>
+        <f:if condition="{pageDescription}">
+            <meta property="og:description" content="{pageDescription}"/>
+        </f:if>
+        <f:if condition="{pageImage}">
+            <meta property="og:image" content="{media:uri.image(image:pageImage)}"/>
+        </f:if>
+    </f:section>
 
 
 </head>
 <body>
 <f:section name="body">
-	<f:render partial="Header" arguments="{_all}"/>
-	{parts.menu -> f:format.raw()}
-	<div class="container">
-		{parts.breadcrumb -> f:format.raw()}
-	</div>
+    <f:render partial="Header" arguments="{_all}"/>
+    {parts.menu -> f:format.raw()}
+    <div class="container">
+        {parts.breadcrumb -> f:format.raw()}
+    </div>
 
-	<div class="container section-content">
-		{content.main -> f:format.raw()}
-	</div>
+    <div class="container section-content">
+        {content.main -> f:format.raw()}
+    </div>
 
-	<f:render partial="Footer" arguments="{_all}"/>
+    <f:render partial="Footer" arguments="{_all}"/>
 </f:section>
 
 <f:section name="bodyScripts">
-	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src="{f:uri.resource(path: 'JavaScript/libs.min.js', package: 'DPSG.CampGround')}"></script>
-	<script src="{f:uri.resource(path: 'JavaScript/app.min.js', package: 'DPSG.CampGround')}"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/libs.min.js', package: 'DPSG.CampGround')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/app.min.js', package: 'DPSG.CampGround')}"></script>
 
-	<f:render partial="BodyScripts/GoogleAnalytics" arguments="{dpsgSettings:dpsgSettings}"/>
+    <f:render partial="BodyScripts/GoogleAnalytics" arguments="{dpsgSettings:dpsgSettings}"/>
 
 </f:section>
 </body>

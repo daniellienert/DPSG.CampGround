@@ -1,23 +1,23 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
 <article class="story">
-	<div class="row">
+    <div class="row">
 
-		<div class="col-md-9">
-			<neos:contentElement.wrap node="{node}">
-				<h1>
-					{neos:contentElement.editable(property: 'title')}
-				</h1>
-			</neos:contentElement.wrap>
+        <div class="col-md-9">
+            <neos:contentElement.wrap node="{node}">
+                <h1>
+                    {neos:contentElement.editable(property: 'title')}
+                </h1>
+            </neos:contentElement.wrap>
 
-			<f:render partial="HeaderImage" arguments="{headerImage:node.properties.storyHeaderImage, node:node}" />
+            <f:render partial="HeaderImage" arguments="{headerImage:node.properties.storyHeaderImage, node:node}"/>
 
-			{content -> f:format.raw()}
-			<f:render partial="SocialButtons" arguments="{_all}" />
-		</div>
+            {content -> f:format.raw()}
+            <f:render partial="SocialButtons" arguments="{_all}"/>
+        </div>
 
-		<div class="col-md-3">
-			<f:render partial="StoryMetaBox" arguments="{_all}" />
-		</div>
-	</div>
+        <div class="col-md-3">
+            <f:render partial="StoryMetaBox" arguments="{_all}"/>
+        </div>
+    </div>
 </article>
