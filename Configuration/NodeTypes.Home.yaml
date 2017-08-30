@@ -1,7 +1,7 @@
 
 'DPSG.CampGround::HomePage':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': true
+    'Neos.NodeTypes:Page': true
   constraints:
     nodeTypes:
       '*': true
