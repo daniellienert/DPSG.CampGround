@@ -1,7 +1,7 @@
 <?php
 namespace DPSG\CampGround\ViewHelpers\Facebook;
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 class EventsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
 
