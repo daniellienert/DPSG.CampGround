@@ -77,7 +77,7 @@
           group: 'storyProperties'
 
     'storyHeaderImage':
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: 'Neos\Media\Domain\Model\ImageInterface'
       ui:
         label: Artikelbild
         reloadIfChanged: true
