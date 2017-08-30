@@ -3,7 +3,7 @@ prototype(DPSG.CampGround:LatestStories) {
 	templatePath = ${'resource://DPSG.CampGround/Private/Templates/NodeTypes/LatestStories.html'}
 	sectionName = 'storyBlocks'
 
-	entries = TYPO3.TypoScript:Collection {
+	entries = Neos.Fusion:Collection {
 		collection = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('storyHeaderImage', 'set').sortDesc('storyStartDate').limit(3).execute()}
 
 		itemName = 'node'
@@ -22,7 +22,7 @@ prototype(DPSG.CampGround:LatestStories) {
 }
 
 
-prototype(DPSG.CampGround:LatestStory) < prototype(TYPO3.TypoScript:Template) {
+prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
 	# Fall back to modified date if there is no publication date set
 
 

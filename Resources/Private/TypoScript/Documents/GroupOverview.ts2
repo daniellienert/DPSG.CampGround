@@ -1,4 +1,4 @@
-prototype(DPSG.CampGround:GroupOverview) < prototype(TYPO3.TypoScript:Template) {
+prototype(DPSG.CampGround:GroupOverview) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/GroupOverview.html'
 
 	node = ${node}

@@ -1,4 +1,4 @@
-prototype(DPSG.CampGround:Story) < prototype(TYPO3.TypoScript:Template) {
+prototype(DPSG.CampGround:Story) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Story.html'
 
     # Fall back to modified date if there is no publication date set

@@ -20,7 +20,7 @@ prototype(DPSG.CampGround:StoryListContent) < prototype(Content) {
 		entryTags.1 = 'NodeType_DPSG.CampGround:Story'
 	}
 
-	entries = TYPO3.TypoScript:Collection {
+	entries = Neos.Fusion:Collection {
 		sourceNode = ${q(node).is('[instanceof DPSG.CampGround:StoryList]') ? node : site}
 		collection = ${q(this.sourceNode).find('[instanceof DPSG.CampGround:Story]')}
 

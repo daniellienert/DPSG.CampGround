@@ -2,7 +2,7 @@
 * Root TypoScript template
 */
 
-prototype(DPSG.CampGround:PageImage) < prototype(TYPO3.TypoScript:Case) {
+prototype(DPSG.CampGround:PageImage) < prototype(Neos.Fusion:Case) {
 	default {
 		condition = ${true}
 		renderer = ''
@@ -15,19 +15,19 @@ include: NodeTypes/*
 
 page = Page {
 	head {
-		stylesheets.site = TYPO3.TypoScript:Template {
+		stylesheets.site = Neos.Fusion:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'stylesheets'
 
 			node = ${node}
 		}
 
-		javascripts.site = TYPO3.TypoScript:Template {
+		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
 
-		metadata = TYPO3.TypoScript:Template {
+		metadata = Neos.Fusion:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'metadata'
 
@@ -77,7 +77,7 @@ page = Page {
 			}
 		}
 
-		javascripts.site = TYPO3.TypoScript:Template {
+		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScripts'
 
