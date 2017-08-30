@@ -1,14 +1,13 @@
-TYPO3:
-  Form:
-    yamlPersistenceManager:
-      savePath: 'resource://DPSG.CampGround/Private/Form/'
 
 DPSG:
   CampGround:
     FacebookIntegration:
-      PageId:
-      PageName:
-      AccessToken:
-
+      PageId: null
+      PageName: null
+      AccessToken: null
     GoogleAnalytics:
-      TrackingId:
+      TrackingId: null
+Neos:
+  Form:
+    yamlPersistenceManager:
+      savePath: 'resource://DPSG.CampGround/Private/Form/'
