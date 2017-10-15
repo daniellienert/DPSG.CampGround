@@ -5,116 +5,116 @@
 
 module.exports = function (grunt) {
 
-	// Project configuration.
-	grunt.initConfig({
-		dirs: {
-			js: {
-				src: [
-					'JavaScript/*.js'
-					],
-				dest: '../Public/JavaScript'
-			},
-			sass: {
-				src: 'Styles',
-				dest: '../Public/Styles'
-			},
-		},
+    // Project configuration.
+    grunt.initConfig({
+        dirs: {
+            js: {
+                src: [
+                    'JavaScript/*.js'
+                ],
+                dest: '../Public/JavaScript'
+            },
+            sass: {
+                src: 'Styles',
+                dest: '../Public/Styles'
+            },
+        },
 
 
-		fileLists: {
-			js: {
-				libs: [
-					'bower_components/jquery/dist/jquery.min.js',
-					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js',
-					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js',
-					'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js',
-					'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
-					'bower_components/gmaps/gmaps.js',
-					'JavaScript/Lib/jquery.socialshareprivacy/jquery.socialshareprivacy.js'
-				]
-			}
-		},
+        fileLists: {
+            js: {
+                libs: [
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js',
+                    'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js',
+                    'bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js',
+                    'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+                    'bower_components/gmaps/gmaps.js',
+                    'JavaScript/Lib/jquery.socialshareprivacy/jquery.socialshareprivacy.js'
+                ]
+            }
+        },
 
 
-		compass: {
-			dist: {
-				options: {
-					config: 'config.rb'
-				}
-			}
-		},
+        compass: {
+            dist: {
+                options: {
+                    config: 'config.rb'
+                }
+            }
+        },
 
 
-		concat: {
-			dist: {
-				src: [
-					'<%= fileLists.js.libs %>'
-				],
-				dest: '<%= dirs.js.dest %>/libs.min.js'
-			}
-		},
+        concat: {
+            dist: {
+                src: [
+                    '<%= fileLists.js.libs %>'
+                ],
+                dest: '<%= dirs.js.dest %>/libs.min.js'
+            }
+        },
 
 
-		uglify: {
-			options: {
-				beautify: true
-			},
-			dist: {
-				src: [
-					'<%= dirs.js.src %>'
-				],
-				dest: '<%= dirs.js.dest %>/app.min.js'
-			}
-		},
+        uglify: {
+            options: {
+                beautify: true
+            },
+            dist: {
+                src: [
+                    '<%= dirs.js.src %>'
+                ],
+                dest: '<%= dirs.js.dest %>/app.min.js'
+            }
+        },
 
 
-		watch: {
-			js: {
-				files: ['<%= dirs.js.src %>'],
-				tasks: 'dist'
-			},
-			sass: {
-				files: ['<%= dirs.sass.src %>/**/*.scss'],
-				tasks: 'compass'
-			}
-		}
-	});
+        watch: {
+            js: {
+                files: ['<%= dirs.js.src %>'],
+                tasks: 'dist'
+            },
+            sass: {
+                files: ['<%= dirs.sass.src %>/**/*.scss'],
+                tasks: 'compass'
+            }
+        }
+    });
 
-	// Load the plugin that provides the "concat" task.
-	grunt.loadNpmTasks('grunt-contrib-concat');
+    // Load the plugin that provides the "concat" task.
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
-	// Load the plugin that provides the "uglify" task.
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+    // Load the plugin that provides the "uglify" task.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	// Load the plugin that provides the "watch" task.
-	grunt.loadNpmTasks('grunt-contrib-watch');
+    // Load the plugin that provides the "watch" task.
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-	// Load the plugin that provides the "compass" task.
-	grunt.loadNpmTasks('grunt-contrib-compass');
+    // Load the plugin that provides the "compass" task.
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
-	// Load the plugin that provides the "copy" task.
-	grunt.loadNpmTasks('grunt-contrib-copy');
+    // Load the plugin that provides the "copy" task.
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-	// Load Task to install bower packages
-	grunt.loadNpmTasks('grunt-bower-task');
+    // Load Task to install bower packages
+    grunt.loadNpmTasks('grunt-bower-task');
 
-	// Load Task to clean build paths
-	grunt.loadNpmTasks('grunt-contrib-clean');
-
-
-	// Default task.
-	grunt.registerTask('default', ['dist', 'compass']);
+    // Load Task to clean build paths
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
 
-	grunt.registerTask('dist', ['build:dist']);
+    // Default task.
+    grunt.registerTask('default', ['dist', 'compass']);
 
-	grunt.registerTask('w', ['watch']);
 
-	// Build task.
-	grunt.registerTask('build', 'The general build tasks. No arguments builds everything, you can use :dist and :angular', function(argument) {
-		var argumentParts = argument.split("_");
-		var baseArgument = argumentParts[argumentParts.length -1] === "dev" ? argument.substr(0,argument.length -4) : argument;
-		grunt.task.run('uglify:' + baseArgument);
-		grunt.task.run('concat:' + argument);
-	});
+    grunt.registerTask('dist', ['build:dist']);
+
+    grunt.registerTask('w', ['watch']);
+
+    // Build task.
+    grunt.registerTask('build', 'The general build tasks. No arguments builds everything, you can use :dist and :angular', function (argument) {
+        var argumentParts = argument.split("_");
+        var baseArgument = argumentParts[argumentParts.length - 1] === "dev" ? argument.substr(0, argument.length - 4) : argument;
+        grunt.task.run('uglify:' + baseArgument);
+        grunt.task.run('concat:' + argument);
+    });
 };

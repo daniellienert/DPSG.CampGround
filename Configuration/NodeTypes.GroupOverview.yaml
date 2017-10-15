@@ -1,0 +1,14 @@
+
+'DPSG.CampGround:GroupOverview':
+  superTypes:
+    'Neos.Neos:Document': true
+  constraints:
+    nodeTypes:
+      'DPSG.CampGround:Stufe': true
+      '*': false
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: Stufenübersicht
+    icon: icon-home

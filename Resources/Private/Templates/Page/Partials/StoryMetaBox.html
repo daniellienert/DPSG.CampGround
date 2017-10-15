@@ -1,44 +1,46 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 
 <div class="story-meta">
-	<div class="row">
-		<div class="col-md-4">
-			<h5>Stufe</h5>
-		</div>
-		<div class="col-md-8">
-			<ul>
-				<f:if condition="{group}">
-					<f:then>
-						<f:for each="{group}" as="groupNode">
-							<li>
-								<neos:link.node node="{groupNode}">{groupNode.properties.title}</neos:link.node>
-							</li>
-						</f:for>
-					</f:then>
-					<f:else>
-						<li>
-							<a href="stufen.html">Alle</a>
-						</li>
-					</f:else>
-				</f:if>
-			</ul>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<h5>Datum</h5>
-		</div>
-		<div class="col-md-8">
-			<f:if condition="{node.properties.storyEndDate}">
-				<f:then>{f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}</f:then>
-				<f:else>{f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
-			</f:if>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<h5>Autor</h5>
-		</div>
-		<div class="col-md-8">{node.properties.author}</div>
-	</div>
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Stufe</h5>
+        </div>
+        <div class="col-md-8">
+            <ul>
+                <f:if condition="{group}">
+                    <f:then>
+                        <f:for each="{group}" as="groupNode">
+                            <li>
+                                <neos:link.node node="{groupNode}">{groupNode.properties.title}</neos:link.node>
+                            </li>
+                        </f:for>
+                    </f:then>
+                    <f:else>
+                        <li>
+                            <a href="stufen.html">Alle</a>
+                        </li>
+                    </f:else>
+                </f:if>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Datum</h5>
+        </div>
+        <div class="col-md-8">
+            <f:if condition="{node.properties.storyEndDate}">
+                <f:then>{f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis
+                    {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}
+                </f:then>
+                <f:else>{f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
+            </f:if>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Autor</h5>
+        </div>
+        <div class="col-md-8">{node.properties.author}</div>
+    </div>
 </div>

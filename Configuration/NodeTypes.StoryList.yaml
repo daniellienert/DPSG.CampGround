@@ -1,0 +1,21 @@
+'DPSG.CampGround:StoryList':
+  superTypes:
+    'Neos.Neos:Document': true
+  constraints:
+    nodeTypes:
+      'DPSG.CampGround:Story': true
+      '*': false
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: 'Story List'
+    icon: icon-list-alt
+  properties:
+    sourceNode:
+      type: reference
+      ui:
+        label: 'Liste an Einträgen'
+        reloadIfChanged: true
+        inspector:
+          group: document

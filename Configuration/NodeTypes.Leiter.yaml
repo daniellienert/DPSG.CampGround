@@ -1,0 +1,15 @@
+'DPSG.CampGround:Leiter':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    label: Leiter
+    icon: icon-user
+  childNodes: null
+  properties:
+    userImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Benutzerbild
+        reloadIfChanged: true
+        inspector:
+          group: Leiter

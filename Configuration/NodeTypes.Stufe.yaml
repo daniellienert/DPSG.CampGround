@@ -1,0 +1,25 @@
+'DPSG.CampGround:Stufe':
+  superTypes:
+    'Neos.Neos:Document': true
+  constraints:
+    nodeTypes:
+      '*': false
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: Stufe
+    icon: icon-group
+    inspector:
+      groups:
+        Stufe:
+          label: Eigenschaften
+          position: 1
+  properties:
+    groupImage:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: Gruppenbild
+        reloadIfChanged: true
+        inspector:
+          group: Stufe

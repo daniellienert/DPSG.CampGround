@@ -27,7 +27,7 @@ curl -s https://getcomposer.org/installer | php
 2. Mittels composer wird dann neos installiert::
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-php composer.phar create-project --no-dev typo3/neos-base-distribution TYPO3-Neos-1.2
+php composer.phar create-project --no-dev neos/neos-base-distribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 3. Ersetze die Zeile `"typo3/neosdemotypo3org": "1.2.*“,` durch `"dpsg/campground": "dev-master",`

@@ -1,0 +1,68 @@
+'DPSG.CampGround:Story':
+  superTypes:
+    'Neos.Neos:Document': true
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: Bericht
+    icon: icon-calendar
+    inspector:
+      groups:
+        storyProperties:
+          label: Eigenschaften
+          position: 1
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: true
+        inspector:
+          group: null
+
+    storyStartDate:
+      type: DateTime
+      ui:
+        reloadIfChanged: false
+        label: Startdatum
+        inspector:
+          group: storyProperties
+
+    storyEndDate:
+      type: DateTime
+      ui:
+        reloadIfChanged: false
+        label: Enddatum
+        inspector:
+          group: storyProperties
+
+    group:
+      type: references
+      ui:
+        reloadIfChanged: true
+        label: Stufe
+        inspector:
+          group: storyProperties
+          editorOptions:
+            nodeTypes:
+              - 'DPSG.CampGround:Stufe'
+    author:
+      type: string
+      ui:
+        reloadIfChanged: false
+        label: Autor
+        inspector:
+          group: 'storyProperties'
+
+    storyHeaderImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Artikelbild
+        reloadIfChanged: true
+        inspector:
+          group: storyProperties
+      search:
+        elasticSearchMapping:
+          type: string
+          include_in_all: false
+        indexing: '${(node.properties.storyHeaderImage ? "set" : "missing")}'

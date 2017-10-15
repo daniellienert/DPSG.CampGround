@@ -1,4 +1,3 @@
-
 DPSG:
   CampGround:
     FacebookIntegration:
@@ -7,7 +6,19 @@ DPSG:
       AccessToken: null
     GoogleAnalytics:
       TrackingId: null
+
 Neos:
+  Neos:
+    userInterface:
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1
+
   Form:
     yamlPersistenceManager:
       savePath: 'resource://DPSG.CampGround/Private/Form/'
+
+  ContentRepository:
+    Search:
+      indexAllWorkspaces: false
+

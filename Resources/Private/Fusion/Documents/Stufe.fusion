@@ -1,0 +1,34 @@
+prototype(DPSG.CampGround:Stufe) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Stufe.html'
+
+    node = ${node}
+
+    // elasticSearch version
+    groupStories = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('group', node).sortDesc('storyStartDate').limit(10).execute()}
+
+    // simpleSearch version
+    //groupStories = ${Array.slice(Search.query(site).nodeType('DPSG.CampGround:Story').like('group', node.identifier).sortDesc('storyStartDate').limit(10).execute(), 0, 10)}
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = 'main'
+        @cache.mode = 'cached'
+    }
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier.documentNode = ${documentNode}
+        // Flush this element when a n entry of the given type is changed
+        entryTags.1 = 'NodeType_DPSG.CampGround:Story'
+    }
+}
+
+prototype(Neos.Neos:PrimaryContent).Stufe {
+    condition = ${q(node).is('[instanceof DPSG.CampGround:Stufe]')}
+    type = 'DPSG.CampGround:Stufe'
+}
+
+prototype(DPSG.CampGround:PageImage).Stufe {
+    condition = ${q(node).is('[instanceof DPSG.CampGround:Stufe]')}
+    renderer = ${q(node).property('groupImage')}
+    @position = 'start 20'
+}

@@ -1,18 +1,14 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
 
-
 <div class="row">
-
     <div class="col-md-9">
         <neos:contentElement.wrap node="{node}">
             <h1>
                 {neos:contentElement.editable(property: 'title')}
             </h1>
         </neos:contentElement.wrap>
-
         <f:render partial="HeaderImage" arguments="{headerImage:node.properties.groupImage, node:node}"/>
-
         {content -> f:format.raw()}
     </div>
 

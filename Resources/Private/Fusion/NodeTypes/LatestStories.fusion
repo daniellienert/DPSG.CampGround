@@ -24,8 +24,6 @@ prototype(DPSG.CampGround:LatestStories) {
 
 prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
     # Fall back to modified date if there is no publication date set
-
-
     group = ${q(node).property('group')}
 
     node = ${node}

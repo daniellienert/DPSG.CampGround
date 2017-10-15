@@ -1,6 +1,4 @@
-.typo3-neos-nodetypes-textwithimage, .typo3-neos-nodetypes-image, .story-header-image {
-
-
+.neos-nodetypes-textwithimage, .neos-nodetypes-image, .story-header-image {
   display: table;
 
   figure {
@@ -24,18 +22,18 @@
     max-width: 100%
   }
 
-  .typo3-neos-alignment-left {
+  .neos-alignment-left {
     float: left;
     margin: 7px 7px 7px 0;
   }
 
-  .typo3-neos-alignment-right {
+  .neos-alignment-right {
     float: right;
     margin: 7px 0 7px 7px;
   }
 }
 
-.typo3-neos-nodetypes-threecolumn, .typo3-neos-nodetypes-fourcolumn, .blog-header-image {
+.neos-nodetypes-threecolumn, .neos-nodetypes-fourcolumn, .blog-header-image {
   margin-bottom: 10px;
 }
 

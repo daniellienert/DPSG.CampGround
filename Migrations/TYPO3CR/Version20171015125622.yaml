@@ -1,0 +1,16 @@
+up:
+  comments: 'Fix asset allocation in the nodes using old node table'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'Neos.NodeTypes:Image'
+      transformations:
+        -
+          type: 'DPSG\CampGround\Transformations\AssetFixingTransformation'
+          settings: []
+
+down:
+  comments: 'No down migration possible.'

@@ -14,12 +14,10 @@
                     <neos:link.node node="{node}">
                         <f:if condition="{node.properties.storyHeaderImage}">
                             <f:then>
-                                <media:image image="{node.properties.storyHeaderImage}" alt="{node.properties.title}"
-                                             title="{node.properties.title}" maximumWidth="820" maximumHeight="350"
-                                             allowCropping="TRUE"/>
+                                <media:image image="{node.properties.storyHeaderImage}" alt="{node.properties.title}" title="{node.properties.title}" width="820" height="350" allowCropping="TRUE"/>
                             </f:then>
                             <f:else>
-                                <img src="{f:uri.resource(path: 'Images/HeaderImagePlaceHolder.jpg' package:'DPSG.CampGround')}"
+                                <img src="{f:uri.resource(path: 'Images/HeaderImagePlaceHolder.jpg', package:'DPSG.CampGround')}"
                                      title="{node.properties.title}">
                             </f:else>
                         </f:if>
