@@ -56,7 +56,8 @@ class AssetFixingTransformation extends AbstractTransformation
 
     public function execute(NodeData $node)
     {
-        $image = $node->getProperty('image');
+        $propertyName = 'storyHeaderImage';
+        $image = $node->getProperty($propertyName);
         if (is_array($image)) {
             return;
         }
@@ -81,7 +82,7 @@ class AssetFixingTransformation extends AbstractTransformation
 
         $objectIdentifier = ObjectAccess::getProperty($assetObject, 'Persistence_Object_Identifier', true);
 
-        $node->setProperty('image', [
+        $node->setProperty($propertyName, [
             '__flow_object_type' => TypeHandling::getTypeForValue($assetObject),
             '__identifier' => $objectIdentifier
         ]);

@@ -6,7 +6,7 @@ up:
         -
           type: 'NodeType'
           settings:
-            nodeType: 'Neos.NodeTypes:Image'
+            nodeType: 'DPSG.CampGround:Story'
       transformations:
         -
           type: 'DPSG\CampGround\Transformations\AssetFixingTransformation'

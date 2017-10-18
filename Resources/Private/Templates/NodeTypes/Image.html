@@ -8,29 +8,22 @@
         <f:if condition="{link}">
             <f:then>
                 <a href="{link}">
-                    <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}"
-                                 maximumHeight="{maximumHeight}" allowCropping="{allowCropping}"
-                                 allowUpScaling="{allowUpScaling}"/>
+                    <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}"/>
                 </a>
             </f:then>
-
             <f:else>
-                <f:if condition="{node.context.workspace.name} == 'live'"><a
-                        href="{media:uri.image(image: image.originalImage, maximumWidth: '2480', maximumHeight: '1024')}"
-                        class="lightbox"></f:if>
+                <f:if condition="{node.context.workspace.name} == 'live'"><a href="{media:uri.image(image: image, maximumWidth: '2480', maximumHeight: '1024')}" class="lightbox"></f:if>
 
                 <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}"
                              maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="FALSE"/>
 
                 <f:if condition="{node.context.workspace.name} == 'live'"></a></f:if>
             </f:else>
-
         </f:if>
     </f:then>
     <f:else>
         <f:if condition="{node.context.workspace.name} != 'live'">
-            <img src="{f:uri.resource(package: 'Neos.Neos', path: 'Images/dummy-image.png')}" title="Dummy image"
-                 alt="Dummy image" class="neos-handle"/>
+            <img src="{f:uri.resource(package: 'Neos.Neos', path: 'Images/dummy-image.png')}" title="Dummy image" alt="Dummy image" class="neos-handle"/>
         </f:if>
     </f:else>
 </f:if>

@@ -9,7 +9,8 @@
     "require": {
         "neos/neos": "^3.2",
         "dl/gallery": "^2.0",
-        "jonnitto/prettyembedyoutube": "^3.0"
+        "jonnitto/prettyembedyoutube": "^3.0",
+        "flowpack/cachebuster": "^1.0"
     },
     "autoload": {
         "psr-4": {
