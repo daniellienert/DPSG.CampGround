@@ -7,7 +7,7 @@
         "LGPL-3.0+"
     ],
     "require": {
-        "neos/neos": "^3.2",
+        "neos/neos": "^3.3",
         "dl/gallery": "^2.0",
         "jonnitto/prettyembedyoutube": "^3.0",
         "flowpack/cachebuster": "^1.0"
