@@ -4,7 +4,7 @@ prototype(DPSG.CampGround:StorySlider) {
     @cache {
         mode = 'cached'
         entryIdentifier.documentNode = ${documentNode}
-        // Flush this element when a n entry of the given type is changed
+        // Flush this element when an entry of the given type is changed
         entryTags.1 = 'NodeType_DPSG.CampGround:Story'
     }
 }
