@@ -2,14 +2,14 @@
     "name": "dpsg/campground",
     "type": "neos-site",
     "description": "Neos site package providing a basis for dpsg pages.",
-    "homepage": "http://daniel.lienert.cc/",
+    "homepage": "https://daniel.lienert.cc/",
     "license": [
         "LGPL-3.0+"
     ],
     "require": {
-        "neos/neos": "^3.3",
+        "neos/neos": "^4.0",
         "dl/gallery": "^3.0",
-        "jonnitto/prettyembedyoutube": "^3.0",
+        "jonnitto/prettyembedyoutube": "^4.1",
         "flowpack/cachebuster": "^1.0"
     },
     "autoload": {

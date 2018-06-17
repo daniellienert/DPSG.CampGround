@@ -1,5 +1,4 @@
-DPSG.CampGround
-===============
+# DPSG.CampGround
 
 DPSG Campground ist ein SitePackage für das Content Management System Neos. Das Paket bietet neben dem, an www.dpsg.de angelegten Vorlage jeder Menge spezielle Seitenelemente die in dieser Art auf den meisten DPSG Seiten vorkommen dürften:
 
@@ -13,8 +12,7 @@ Eine genaue Beschreibung des Pakets findet ihr auf http://daniel.lienert.cc
 Eine Instanz des Pakets befindet sich auf http://www.dpsg-urloffen.de
 
 
-Installation
-------------
+## Installation
 
 ### Pakete installieren
 
@@ -24,13 +22,13 @@ Installation
 curl -s https://getcomposer.org/installer | php
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2. Mittels composer wird dann neos installiert::
+2. Mittels composer wird dann Neos installiert::
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 php composer.phar create-project --no-dev neos/neos-base-distribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. Ersetze die Zeile `"typo3/neosdemotypo3org": "1.2.*“,` durch `"dpsg/campground": "dev-master",`
+3. Ersetze die Zeile welche mit `"neos/demo",` beginnt durch `"dpsg/campground": "dev-master",`
 
 4. Aktualisere die Pakete mit einem Aufruf von
 
@@ -40,12 +38,11 @@ php composer.phar update
 
 ### Seite aktivieren
 
-In deinem Browser öffnest du nun die Adresse unter dem du die Pakete abgelegt hast. Du wisrt zum Setup umgeleitet. Nachdem du die Datenbankzugangsdaten eingetragen und einen Administrator-Benutzer eingetragen hast kannst du die Seite *„DPSG.CampGround“ *importieren.
+In deinem Browser öffnest du nun die Adresse unter dem du die Pakete abgelegt hast. Du wisrt zum Setup umgeleitet. Nachdem du die Datenbankzugangsdaten eingetragen und einen Administrator-Benutzer eingetragen hast kannst du die Seite *„DPSG.CampGround“* importieren.
 
 Hat alles geklappt, kannst du dich im Backend anmelden und die Inhalte in deine neue Webseite einpflegen.
 
-Konfiguration
--------------
+## Konfiguration
 
 Die Konfiguration deiner Seite befindet sich in der Datei: `Configuration/Settings.yaml`. Dort fügst du die folgende Konfigurationsstruktur hinzu:
 
