@@ -8,7 +8,7 @@
     ],
     "require": {
         "neos/neos": "^3.3",
-        "dl/gallery": "^2.0",
+        "dl/gallery": "^3.0",
         "jonnitto/prettyembedyoutube": "^3.0",
         "flowpack/cachebuster": "^1.0"
     },
