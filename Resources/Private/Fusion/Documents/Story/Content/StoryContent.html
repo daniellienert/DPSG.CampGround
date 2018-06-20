@@ -10,14 +10,14 @@
                 </h1>
             </neos:contentElement.wrap>
 
-            <f:render partial="HeaderImage" arguments="{headerImage:node.properties.storyHeaderImage, node:node}"/>
+            {headerImage -> f:format.raw()}
 
             {content -> f:format.raw()}
-            <f:render partial="SocialButtons" arguments="{_all}"/>
+            {socialButtons -> f:format.raw()}
         </div>
 
         <div class="col-md-3">
-            <f:render partial="StoryMetaBox" arguments="{_all}"/>
+            {storyMetaBox -> f:format.raw()}
         </div>
     </div>
 </article>

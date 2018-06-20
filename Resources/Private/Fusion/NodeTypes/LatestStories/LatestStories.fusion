@@ -1,28 +1,23 @@
-prototype(DPSG.CampGround:LatestStories) {
+prototype(DPSG.CampGround:LatestStories) < prototype(Neos.Fusion:Tag) {
 
-    templatePath = ${'resource://DPSG.CampGround/Private/Templates/NodeTypes/LatestStories.html'}
-    sectionName = 'storyBlocks'
-
-    entries = Neos.Fusion:Collection {
+    attributes.class = 'row'
+    content = Neos.Fusion:Collection {
         collection = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('storyHeaderImage', 'set').sortDesc('storyStartDate').limit(3).execute()}
 
         itemName = 'node'
-        itemRenderer = DPSG.CampGround:LatestStory {
-            templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/LatestStories.html'
-            sectionName = 'singleStory'
-        }
+        itemRenderer = DPSG.CampGround:LatestStory
     }
 
     @cache {
         mode = 'cached'
         entryIdentifier.documentNode = ${documentNode}
-        // Flush the blog feed when a blog entry is changed
         entryTags.1 = 'NodeType_DPSG.CampGround:Story'
     }
 }
 
-
 prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/NodeTypes/LatestStories/LatestStories.html'
+
     # Fall back to modified date if there is no publication date set
     group = ${q(node).property('group')}
 
@@ -35,9 +30,4 @@ prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
 
     storyDate = ${q(node).property('storyStartDate') ? q(node).property('storyStartDate') : q(node).property('lastModified')}
     teaserText = ${String.cropAtWord(q(node).find('main').find('[instanceof Neos.NodeTypes:Text]').first().property('text'), 200, ' ...')}
-}
-
-prototype(Neos.Neos:PrimaryContent).Story {
-    condition = ${q(node).is('[instanceof DPSG.CampGround:Story]')}
-    type = 'DPSG.CampGround:Story'
 }

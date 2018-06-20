@@ -1,0 +1,9 @@
+prototype(DPSG.CampGround:Components.Atoms.StoryMetaBox) < prototype(Neos.Fusion:Template) {
+    group = null
+    storyEndDate = null
+    storyStartDate = null
+    author = null
+
+    node = ${node}
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/Components/Atoms/StoryMetaBox/StoryMetaBox.html'
+}

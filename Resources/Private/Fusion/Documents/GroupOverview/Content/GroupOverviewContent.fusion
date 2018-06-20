@@ -1,0 +1,14 @@
+prototype(DPSG.CampGround:GroupOverviewContent) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/Documents/GroupOverview/Content/GroupOverviewContent.html'
+
+    node = ${node}
+    title = ${node.properties.title}
+    groupNodes = ${q(node).find('[instanceof DPSG.CampGround:Stufe]').get()}
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier.documentNode = ${documentNode}
+        // Flush this element when a n entry of the given type is changed
+        entryTags.1 = 'NodeType_DPSG.CampGround:Stufe'
+    }
+}

@@ -1,0 +1,3 @@
+'DPSG.CampGround:DefaultPage':
+  superTypes:
+    'Neos.NodeTypes:Page': true

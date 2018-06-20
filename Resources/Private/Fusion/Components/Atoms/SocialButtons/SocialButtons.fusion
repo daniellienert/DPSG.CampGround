@@ -1,0 +1,4 @@
+prototype(DPSG.CampGround:Components.Atoms.SocialButtons) < prototype(Neos.Fusion:Template) {
+    node = ${node}
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/Components/Atoms/SocialButtons/SocialButtons.html'
+}

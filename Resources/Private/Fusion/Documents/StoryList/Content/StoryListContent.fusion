@@ -1,0 +1,43 @@
+prototype(DPSG.CampGround:StoryListContent) < prototype(Neos.Fusion:Template) {
+    node = ${node}
+
+    @context.requestFormat = ${request.format}
+
+    templatePath = ${'resource://DPSG.CampGround/Private/Fusion/Documents/StoryList/Content/StoryListContent.' + requestFormat}
+    title = ${q(node).property('title')}
+    storyStartDate = ${q(node).property('storyStartDate')}
+    storyEndDate = ${q(node).property('storyEndDate')}
+    group = ${q(node).property('group')}
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier.documentNode = ${documentNode}
+        // Flush the blog feed when a blog entry is changed
+        entryTags.1 = 'NodeType_DPSG.CampGround:Story'
+    }
+
+    entries = Neos.Fusion:Collection {
+        sourceNode = ${q(node).is('[instanceof DPSG.CampGround:StoryList]') ? node : site}
+        collection = ${q(this.sourceNode).find('[instanceof DPSG.CampGround:Story]')}
+
+        itemName = 'node'
+        itemRenderer = DPSG.CampGround:StoryContent {
+            templatePath = ${'resource://DPSG.CampGround/Private/Fusion/Documents/Story/Teaser/StoryTeaser.' + requestFormat}
+            title = ${node.properties.title}
+        }
+    }
+}
+
+prototype(DPSG.CampGround:StoryListFeed) < prototype(TypoScript:Array) {
+    doctype = '<?xml version="1.0" encoding="utf-8"?>'
+    doctype.@position = 'start 100'
+
+    feed = DPSG.CampGround:StoryListContent {
+        @position = 'after doctype'
+    }
+}
+
+##
+# Calling a page with the format .atom will automatically call the xml based layout
+#
+atom = DPSG.CampGround:StoryListFeed

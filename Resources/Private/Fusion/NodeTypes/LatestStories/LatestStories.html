@@ -1,0 +1,23 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+<f:if condition="{node.properties.storyHeaderImage}">
+    <div class="col-md-4">
+        <div class="story-teaser-box">
+            <neos:link.node node="{node}">
+                <media:image image="{node.properties.storyHeaderImage}" alt="{node.properties.title}"
+                             width="340" height="200" allowCropping="true"/>
+            </neos:link.node>
+            <neos:link.node node="{node}">
+                <h3>{node.properties.title}</h3>
+            </neos:link.node>
+            <div class="faded">{storyDate -> f:format.date(cldrFormat: 'd. LLLL y', forceLocale: true)}</div>
+            <p>
+                {teaserText -> f:format.raw()}
+            </p>
+            <p>
+                <neos:link.node node="{node}">Weiter lesen</neos:link.node>
+            </p>
+        </div>
+    </div>
+</f:if>

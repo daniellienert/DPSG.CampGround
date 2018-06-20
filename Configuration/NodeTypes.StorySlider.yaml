@@ -1,0 +1,21 @@
+'DPSG.CampGround:StorySlider':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Artikel Slider'
+    inspector:
+      groups:
+        stories:
+          label: Artikel
+          position: 10
+  properties:
+    numberOfArticles:
+      type: integer
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/IntegerValidator: {  }
+      ui:
+        label: 'Anzahl Artikel'
+        reloadIfChanged: true
+        inspector:
+          group: stories

@@ -1,13 +1,13 @@
 {namespace media=Neos\Media\ViewHelpers}
 <div class="story-header-image">
     <figure>
-        <f:if condition="{headerImage}">
+        <f:if condition="{image}">
             <f:then>
                 <f:if condition="{node.context.workspace.name} == 'live'">
-                    <a href="{media:uri.image(image: headerImage.originalImage, maximumWidth: '2480', maximumHeight: '1024')}" class="lightbox">
+                    <a href="{media:uri.image(image: image.originalImage, maximumWidth: '2480', maximumHeight: '1024')}" class="lightbox">
                 </f:if>
-                <media:image image="{headerImage}" alt="{headerImage.alternativeText}"
-                             title="{f:if(condition:headerImage.title, then:headerImage.title, else:node.properties.title)}"
+                <media:image image="{image}" alt="{image.alternativeText}"
+                             title="{f:if(condition:image.title, then:image.title, else:node.properties.title)}"
                              width="820" height="350" allowCropping="TRUE" allowUpScaling="TRUE"/>
                 <f:if condition="{node.context.workspace.name} == 'live'"></a></f:if>
             </f:then>

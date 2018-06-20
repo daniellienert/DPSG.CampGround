@@ -1,9 +1,6 @@
 'DPSG.CampGround:Story':
   superTypes:
-    'Neos.Neos:Document': true
-  childNodes:
-    main:
-      type: 'Neos.Neos:ContentCollection'
+    'Neos.NodeTypes:Page': true
   ui:
     label: Bericht
     icon: icon-calendar
@@ -27,6 +24,12 @@
         label: Startdatum
         inspector:
           group: storyProperties
+      search:
+        elasticSearchMapping:
+          type: date
+          include_in_all: false
+          format: 'date_time_no_millis'
+        indexing: '${(node.properties.storyStartDate ? Date.format(node.properties.storyStartDate, "Y-m-d\TH:i:sP") : null)}'
 
     storyEndDate:
       type: DateTime
@@ -35,6 +38,12 @@
         label: Enddatum
         inspector:
           group: storyProperties
+      search:
+        elasticSearchMapping:
+          type: date
+          include_in_all: false
+          format: 'date_time_no_millis'
+        indexing: '${(node.properties.storyEndDate ? Date.format(node.properties.storyEndDate, "Y-m-d\TH:i:sP") : null)}'
 
     group:
       type: references

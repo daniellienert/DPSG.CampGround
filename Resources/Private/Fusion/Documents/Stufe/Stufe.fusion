@@ -1,0 +1,4 @@
+prototype(DPSG.CampGround:Stufe) < prototype(DPSG.CampGround:DefaultPage) {
+    body.content.main = DPSG.CampGround:StufeContent
+}
+

@@ -1,12 +1,9 @@
 'DPSG.CampGround:Stufe':
   superTypes:
-    'Neos.Neos:Document': true
+    'Neos.NodeTypes:Page': true
   constraints:
     nodeTypes:
       '*': false
-  childNodes:
-    main:
-      type: 'Neos.Neos:ContentCollection'
   ui:
     label: Stufe
     icon: icon-group

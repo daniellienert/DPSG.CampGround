@@ -1,0 +1,21 @@
+'DPSG.CampGround:LatestStories':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Aktuelle Berichte'
+    inspector:
+      groups:
+        latestStories:
+          label: 'Aktuelle Berichte'
+          position: 1
+  properties:
+    numberOfArticles:
+      type: integer
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/IntegerValidator: {  }
+      ui:
+        label: 'Anzahl Berichte'
+        reloadIfChanged: true
+        inspector:
+          group: latestStories

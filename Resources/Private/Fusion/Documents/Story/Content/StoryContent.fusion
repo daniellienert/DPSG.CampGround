@@ -1,0 +1,35 @@
+prototype(DPSG.CampGround:StoryContent) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/Documents/Story/Content/StoryContent.html'
+
+    headerImage = DPSG.CampGround:Components.Atoms.HeaderImage {
+        image = ${node.properties.storyHeaderImage}
+    }
+
+    # Fall back to modified date if there is no publication date set
+    publicationDate = ${node.properties.publicationDate ? node.properties.publicationDate : node.properties.lastModified}
+
+    storyMetaBox = DPSG.CampGround:Components.Atoms.StoryMetaBox {
+        group = ${node.properties.group}
+        storyStartDate = ${node.properties.storyStartDate}
+        storyEndDate = ${node.properties.storyEndDate}
+        author = ${node.properties.author}
+    }
+
+    dateFormat = 'd.m.Y'
+
+    node = ${node}
+
+    firstTextPart = ${q(node).find('[instanceof Neos.NodeTypes:Text]').property('text')}
+    title = ${q(node).property('title')}
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = 'main'
+        @cache.mode = 'cached'
+    }
+
+    // Links to previous and next stories
+    previousStory = ${q(node).prev('[instanceof DPSG.CampGround:Story]').get(0)}
+    nextStory = ${q(node).next('[instanceof DPSG.CampGround:Story]').get(0)}
+
+    socialButtons = DPSG.CampGround:Components.Atoms.SocialButtons
+}

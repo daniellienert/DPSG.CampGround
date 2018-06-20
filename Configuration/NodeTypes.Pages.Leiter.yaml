@@ -1,6 +1,6 @@
 'DPSG.CampGround:Leiter':
   superTypes:
-    'Neos.Neos:Document': true
+    'Neos.NodeTypes:Page': true
   ui:
     label: Leiter
     icon: icon-user

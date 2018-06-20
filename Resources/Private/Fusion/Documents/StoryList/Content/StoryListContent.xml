@@ -1,6 +1,5 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-        <?xml version="1.0" encoding="utf-8"?>
-<f:section name="feed">
+    <?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
         <author>
             <name>{authorName}</name>
@@ -14,4 +13,3 @@
 
         {entries -> f:format.raw()}
     </feed>
-</f:section>

@@ -1,0 +1,6 @@
+prototype(DPSG.CampGround:Components.Atoms.HeaderImage) < prototype(Neos.Fusion:Template) {
+    image = null
+
+    node = ${node}
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/Components/Atoms/StoryHeaderImage/StoryHeaderImage.html'
+}

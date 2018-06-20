@@ -29,11 +29,11 @@
             <h5>Datum</h5>
         </div>
         <div class="col-md-8">
-            <f:if condition="{node.properties.storyEndDate}">
-                <f:then>{f:format.date(date: node.properties.storyStartDate, format: dateFormat)} bis
-                    {f:format.date(date: node.properties.storyEndDate, format: dateFormat)}
+            <f:if condition="{storyEndDate}">
+                <f:then>{f:format.date(date: storyStartDate, format: dateFormat)} bis
+                    {f:format.date(date: storyEndDate, format: dateFormat)}
                 </f:then>
-                <f:else>{f:format.date(date: node.properties.storyStartDate, format: dateFormat)}</f:else>
+                <f:else>{f:format.date(date: storyStartDate, format: dateFormat)}</f:else>
             </f:if>
         </div>
     </div>
@@ -41,6 +41,6 @@
         <div class="col-md-4">
             <h5>Autor</h5>
         </div>
-        <div class="col-md-8">{node.properties.author}</div>
+        <div class="col-md-8">{author}</div>
     </div>
 </div>

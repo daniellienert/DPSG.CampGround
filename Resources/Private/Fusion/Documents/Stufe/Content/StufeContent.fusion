@@ -1,0 +1,25 @@
+prototype(DPSG.CampGround:StufeContent) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DPSG.CampGround/Private/Fusion/Documents/Stufe/Content/StufeContent.html'
+
+    node = ${node}
+    title = ${node.properties.title}
+
+    headerImage = DPSG.CampGround:Components.Atoms.HeaderImage {
+        image = ${node.properties.groupImage}
+    }
+
+    // elasticSearch version
+    groupStories = ${Search.query(site).nodeType('DPSG.CampGround:Story').exactMatch('group', node).sortDesc('storyStartDate').limit(10).execute()}
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = 'main'
+        @cache.mode = 'cached'
+    }
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier.documentNode = ${documentNode}
+        // Flush this element when a n entry of the given type is changed
+        entryTags.1 = 'NodeType_DPSG.CampGround:Story'
+    }
+}

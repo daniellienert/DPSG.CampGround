@@ -1,13 +1,10 @@
 'DPSG.CampGround:StoryList':
   superTypes:
-    'Neos.Neos:Document': true
+    'Neos.NodeTypes:Page': true
   constraints:
     nodeTypes:
       'DPSG.CampGround:Story': true
       '*': false
-  childNodes:
-    main:
-      type: 'Neos.Neos:ContentCollection'
   ui:
     label: 'Story List'
     icon: icon-list-alt

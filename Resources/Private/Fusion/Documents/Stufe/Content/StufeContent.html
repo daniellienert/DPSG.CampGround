@@ -8,7 +8,7 @@
                 {neos:contentElement.editable(property: 'title')}
             </h1>
         </neos:contentElement.wrap>
-        <f:render partial="HeaderImage" arguments="{headerImage:node.properties.groupImage, node:node}"/>
+        {headerImage -> f:format.raw()}
         {content -> f:format.raw()}
     </div>
 

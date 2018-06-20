@@ -3,7 +3,6 @@
 {namespace dpsg=DPSG\CampGround\ViewHelpers}
 
 <div class="row">
-
     <div class="col-md-9">
         <neos:contentElement.wrap node="{node}">
             <h1>
@@ -21,16 +20,16 @@
 
             <h2>{groupNode.properties.title}</h2>
             <div class="neos-nodetypes-image">
+                <f:if condition="{groupNode.properties.groupImage}">
                 <neos:link.node node="{groupNode}">
                     <figure>
-                        <f:if condition="{groupNode.properties.groupImage}">
-                            <media:image image="{groupNode.properties.groupImage}"
-                                         alt="{groupNode.properties.groupImage.alternativeText}"
-                                         title="{f:if(condition:groupNode.properties.groupImage.title, then:groupNode.properties.groupImage.title, else:groupNode.properties.title)}"
-                                         maximumWidth="400" maximumHeight="260" allowCropping="TRUE"/>
-                        </f:if>
+                        <media:image image="{groupNode.properties.groupImage}"
+                                     alt="{groupNode.properties.groupImage.alternativeText}"
+                                     title="{f:if(condition:groupNode.properties.groupImage.title, then:groupNode.properties.groupImage.title, else:groupNode.properties.title)}"
+                                     maximumWidth="400" maximumHeight="260" allowCropping="TRUE"/>
                     </figure>
                 </neos:link.node>
+                </f:if>
             </div>
 
             <p>

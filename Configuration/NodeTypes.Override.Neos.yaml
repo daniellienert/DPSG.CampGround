@@ -1,0 +1,11 @@
+Neos.NodeTypes:Page:
+  abstract: true
+
+'Neos.NodeTypes:TextWithImage':
+  abstract: true
+
+'Neos.NodeTypes:ContentReferences':
+  abstract: true
+
+'Neos.Neos:PluginView':
+  abstract: true

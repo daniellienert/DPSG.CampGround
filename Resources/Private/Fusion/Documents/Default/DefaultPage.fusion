@@ -1,0 +1,71 @@
+prototype(DPSG.CampGround:DefaultPage) < prototype(Neos.Neos:Page) {
+    head {
+        stylesheets.site = Neos.Fusion:Template {
+            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
+            sectionName = 'stylesheets'
+
+            node = ${node}
+        }
+
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
+            sectionName = 'headScripts'
+        }
+
+        metadata = Neos.Fusion:Template {
+            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
+            sectionName = 'metadata'
+
+            node = ${node}
+            siteTitle = ${q(site).property('siteTitle')}
+            pageDescription = ${String.cropAtWord(String.stripTags(q(node).find('main').children().find('[instanceof Neos.NodeTypes:Text]').first().property('text')), 200, ' ...')}
+
+            pageImage = DPSG.CampGround:PageImage
+        }
+    }
+
+    body {
+        templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
+        sectionName = 'body'
+        parts {
+            menu = Neos.Neos:Menu {
+                templatePath = 'resource://DPSG.CampGround/Private/Templates/TypoScriptObjects/Menu.html'
+
+                entryLevel = 1
+                maximumLevels = 2
+
+                attributes.class = 'nav navbar-nav'
+                current.attributes.class = 'active'
+
+                site = ${site}
+                siteTitle = ${q(site).property('siteTitle')}
+            }
+
+            breadcrumb = Neos.Neos:BreadcrumbMenu
+        }
+
+        site = ${site}
+        siteTitle = ${q(site).property('siteTitle')}
+        dpsgSettings = ${Configuration.setting('DPSG.CampGround')}
+
+        // These are your content areas, you can define as many as you want, just name them and the nodePath.
+        content {
+            // The default content section
+            main = Neos.Neos:PrimaryContent {
+                nodePath = 'main'
+            }
+        }
+
+        footer = Neos.Neos:ContentCollection {
+            nodePath = ${q(site).find('footer').property('_path')}
+            collection = ${q(site).children('footer').children()}
+        }
+
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
+            sectionName = 'bodyScripts'
+
+            dpsgSettings = ${Configuration.setting('DPSG.CampGround')}
+        }
+    }
+}

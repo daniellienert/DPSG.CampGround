@@ -1,0 +1,1 @@
+prototype(DPSG.CampGround:HomePage) < prototype(DPSG.CampGround:DefaultPage)

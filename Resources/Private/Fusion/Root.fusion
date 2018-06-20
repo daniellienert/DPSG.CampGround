@@ -1,7 +1,3 @@
-/**
-* Root TypoScript template
-*/
-
 prototype(DPSG.CampGround:PageImage) < prototype(Neos.Fusion:Case) {
     default {
         condition = ${true}
@@ -10,82 +6,7 @@ prototype(DPSG.CampGround:PageImage) < prototype(Neos.Fusion:Case) {
     }
 }
 
-include: Documents/*
-include: NodeTypes/*
-
-page = Page {
-    head {
-        stylesheets.site = Neos.Fusion:Template {
-            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
-            sectionName = 'stylesheets'
-
-            node = ${node}
-        }
-
-        javascripts.site = Neos.Fusion:Template {
-            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
-            sectionName = 'headScripts'
-        }
-
-        metadata = Neos.Fusion:Template {
-            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
-            sectionName = 'metadata'
-
-            node = ${node}
-            siteTitle = ${q(site).property('siteTitle')}
-            pageDescription = ${String.cropAtWord(String.stripTags(q(node).find('main').children().find('[instanceof Neos.NodeTypes:Text]').first().property('text')), 200, ' ...')}
-
-            pageImage = DPSG.CampGround:PageImage
-        }
-    }
-
-    body {
-        templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
-        sectionName = 'body'
-        parts {
-            menu = Menu {
-
-                templatePath = 'resource://DPSG.CampGround/Private/Templates/TypoScriptObjects/Menu.html'
-
-                entryLevel = 1
-                maximumLevels = 2
-
-                attributes.class = 'nav navbar-nav'
-                current.attributes.class = 'active'
-
-                site = ${site}
-                siteTitle = ${q(site).property('siteTitle')}
-            }
-
-            breadcrumb = BreadcrumbMenu
-        }
-
-        site = ${site}
-        siteTitle = ${q(site).property('siteTitle')}
-        dpsgSettings = ${Configuration.setting('DPSG.CampGround')}
-
-        footer = Neos.Neos:ContentCollection {
-            nodePath = ${q(site).find('footer').property('_path')}
-            collection = ${q(site).children('footer').children()}
-        }
-
-        // These are your content areas, you can define as many as you want, just name them and the nodePath.
-        content {
-            // The default content section
-            main = PrimaryContent {
-                nodePath = 'main'
-            }
-        }
-
-        javascripts.site = Neos.Fusion:Template {
-            templatePath = 'resource://DPSG.CampGround/Private/Templates/Page/Default.html'
-            sectionName = 'bodyScripts'
-
-            dpsgSettings = ${Configuration.setting('DPSG.CampGround')}
-        }
-    }
-}
-
+include: **/*
 
 prototype(Neos.NodeTypes:Menu).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'
 prototype(Neos.NodeTypes:Image).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Image.html'
