@@ -9,8 +9,12 @@
     "require": {
         "neos/neos": "^4.0",
         "dl/gallery": "^3.0",
-        "jonnitto/prettyembedyoutube": "^4.1",
-        "flowpack/cachebuster": "^1.0"
+
+        "flowpack/elasticsearch": "~2.0",
+        "flowpack/elasticsearch-contentrepositoryadaptor": "dev-master as 4.0.99",
+        "flowpack/cachebuster": "^1.0",
+
+        "jonnitto/prettyembedyoutube": "^4.1"
     },
     "autoload": {
         "psr-4": {
