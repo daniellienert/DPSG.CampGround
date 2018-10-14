@@ -10,13 +10,10 @@
         "neos/neos": "^4.0",
         "neos/neos-ui": "^1.0",
         "neos/neos-ui-compiled": "^1.0",
-
         "dl/gallery": "^3.0",
-
         "flowpack/elasticsearch": "^2.0",
         "flowpack/elasticsearch-contentrepositoryadaptor": "^4.1",
         "flowpack/cachebuster": "^1.0",
-
         "jonnitto/prettyembedyoutube": "^4.1"
     },
     "autoload": {
@@ -92,7 +89,8 @@
             "Neos.Fusion-20170120013047",
             "Neos.Flow-20170125103800",
             "Neos.Flow-20170127183102",
-            "Neos.ContentRepository.Search-20161210231100"
+            "Neos.ContentRepository.Search-20161210231100",
+            "Neos.Neos-20180907103800"
         ]
     }
 }
