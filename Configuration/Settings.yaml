@@ -14,6 +14,10 @@ Neos:
         nodeTree:
           loadingDepth: 1
 
+    Ui:
+      frontendConfiguration:
+        defaultInlineEditor: 'ckeditor5'
+
   Form:
     yamlPersistenceManager:
       savePath: 'resource://DPSG.CampGround/Private/Form/'
