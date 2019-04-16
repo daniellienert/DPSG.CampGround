@@ -8,8 +8,8 @@
     ],
     "require": {
         "neos/neos": "^4.0",
-        "neos/neos-ui": "^1.0",
-        "neos/neos-ui-compiled": "^1.0",
+        "neos/neos-ui": "*",
+        "neos/neos-ui-compiled": "*",
         "dl/gallery": "^3.0",
         "flowpack/elasticsearch": "^2.0",
         "flowpack/elasticsearch-contentrepositoryadaptor": "^4.1",
