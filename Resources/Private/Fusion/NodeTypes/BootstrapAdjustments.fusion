@@ -1,11 +1,11 @@
 ##
 # Adjust "MultiColumn" element to Twitter bootstrap CSS classes
 #
-prototype(Neos.NodeTypes:MultiColumn) {
+prototype(Neos.NodeTypes.ColumnLayouts:MultiColumn) {
     attributes.class = 'row'
     columns.iterationName = 'multiColumnIteration'
 }
 
-prototype(Neos.NodeTypes:MultiColumnItem) {
+prototype(Neos.NodeTypes.ColumnLayouts:MultiColumnItem) {
     attributes.class = ${'col-md-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
 }
