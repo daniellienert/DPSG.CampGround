@@ -4,7 +4,7 @@ Neos.NodeTypes:Page:
 'Neos.NodeTypes:TextWithImage':
   abstract: true
 
-'Neos.NodeTypes:ContentReferences':
+'Neos.NodeTypes.ContentReferences:ContentReferences':
   abstract: true
 
 'Neos.Neos:PluginView':

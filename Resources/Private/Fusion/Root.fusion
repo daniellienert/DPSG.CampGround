@@ -8,5 +8,5 @@ prototype(DPSG.CampGround:PageImage) < prototype(Neos.Fusion:Case) {
 
 include: **/*
 
-prototype(Neos.NodeTypes:Menu).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'
+prototype(Neos.NodeTypes.Navigation:Navigation).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Menu.html'
 prototype(Neos.NodeTypes:Image).templatePath = 'resource://DPSG.CampGround/Private/Templates/NodeTypes/Image.html'
