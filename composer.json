@@ -7,14 +7,12 @@
         "LGPL-3.0+"
     ],
     "require": {
-        "neos/neos": "^4.0",
+        "neos/neos": "^5.0",
         "neos/neos-ui": "*",
         "neos/neos-ui-compiled": "*",
-        "dl/gallery": "^3.0",
-        "flowpack/elasticsearch": "^2.0",
-        "flowpack/elasticsearch-contentrepositoryadaptor": "^4.1",
-        "flowpack/cachebuster": "^1.0",
-        "jonnitto/prettyembedyoutube": "^4.1"
+        "dl/gallery": "*",
+        "flowpack/cachebuster": "*",
+        "jonnitto/prettyembedyoutube": "*"
     },
     "autoload": {
         "psr-4": {
