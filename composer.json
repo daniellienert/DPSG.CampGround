@@ -90,7 +90,8 @@
             "Neos.ContentRepository.Search-20161210231100",
             "Neos.Neos-20180907103800",
             "Neos.Fusion-20180211175500",
-            "Neos.Fusion-20180211184832"
+            "Neos.Fusion-20180211184832",
+            "Neos.Flow-20180415105700"
         ]
     }
 }
