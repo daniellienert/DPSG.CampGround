@@ -1,5 +1,5 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
 {namespace dpsg=DPSG\CampGround\ViewHelpers}
 
 <nav{attributes -> f:format.raw()}>
@@ -11,7 +11,7 @@
         <ul class="nav nav-pills nav-stacked col-md-{gridSpan}">
     </f:if>
     <li
-    {ts:render(path:'{item.state}.attributes') -> f:format.raw()}>
+    {fusion:render(path:'{item.state}.attributes') -> f:format.raw()}>
     <neos:link.node node="{item.node}">{item.label}</neos:link.node>
     </li>
 </dpsg:multiColumn>

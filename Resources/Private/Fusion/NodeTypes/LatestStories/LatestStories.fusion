@@ -14,20 +14,3 @@ prototype(DPSG.CampGround:LatestStories) < prototype(Neos.Fusion:Tag) {
         entryTags.1 = 'NodeType_DPSG.CampGround:Story'
     }
 }
-
-prototype(DPSG.CampGround:LatestStory) < prototype(Neos.Fusion:Template) {
-    templatePath = 'resource://DPSG.CampGround/Private/Fusion/NodeTypes/LatestStories/LatestStories.html'
-
-    # Fall back to modified date if there is no publication date set
-    group = ${q(node).property('group')}
-
-    node = ${node}
-
-    content = Neos.Neos:ContentCollection {
-        nodePath = 'main'
-        @cache.mode = 'cached'
-    }
-
-    storyDate = ${q(node).property('storyStartDate') ? q(node).property('storyStartDate') : q(node).property('lastModified')}
-    teaserText = ${String.cropAtWord(q(node).find('main').find('[instanceof Neos.NodeTypes:Text]').first().property('text'), 200, ' ...')}
-}

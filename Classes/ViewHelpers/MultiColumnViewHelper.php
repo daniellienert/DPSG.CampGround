@@ -12,59 +12,63 @@ class MultiColumnViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractT
      */
     protected $gridSpan;
 
-
     /**
      * @var integer
      */
     protected $itemsPerColumn;
-
 
     /**
      * @var integer
      */
     protected $gridColumns;
 
+    /**
+     * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception
+     */
+    public function initializeArguments()
+    {
+        $this->registerUniversalTagAttributes();
+        $this->registerArgument('each', 'array', '');
+        $this->registerArgument('as', 'string', '');
+        $this->registerArgument('columns', 'integer', '');
+        $this->registerArgument('itemsPerColumn', 'integer', '');
+        $this->registerArgument('columnWidth', 'integer', '',false, 200);
+        $this->registerArgument('rowTag', 'string', '');
+        $this->registerArgument('columnTag', 'string', '', false, 'div');
+        $this->registerArgument('direction', 'string', '', false, 'vertical');
+    }
 
     /**
-     * @param array $each
-     * @param string $as
-     * @param integer $columns
-     * @param integer $itemsPerColumn
-     * @param integer $columnWidth
-     * @param string $rowTag
-     * @param string $columnTag
-     * @param string $direction
-     *
      * @throws \Neos\FluidAdaptor\Exception
      * @return string
      */
-    public function render(array $each, $as, $columns = 0, $itemsPerColumn = 0, $columnWidth = 200, $rowTag = 'div', $columnTag = 'div', $direction = 'vertical')
+    public function render()
     {
-        $itemCount = count($each);
+        $itemCount = count($this->arguments['each']);
 
-        if ($columns !== 0 && $itemsPerColumn !== 0 || $columns == 0 && $itemsPerColumn == 0) {
+        if (((int)$this->arguments['columns'] !== 0 && (int)$this->arguments['itemsPerColumn'] !== 0) || ((int)$this->arguments['columns'] === 0 && (int)$this->arguments['itemsPerColumn'] === 0)) {
             throw new \Neos\FluidAdaptor\Exception('You have to define either $columns or $itemsPerColumn', 1421582949);
         }
 
-        if ($columns > 0) {
-            $this->calculateBootstrapGrids($columns);
+        if ($this->arguments['columns'] > 0) {
+            $this->calculateBootstrapGrids($this->arguments['columns']);
             $this->itemsPerColumn = ceil($itemCount / $this->gridColumns);
         } else {
-            $this->itemsPerColumn = $itemsPerColumn;
-            $columns = ceil($itemCount / $itemsPerColumn);
-            $this->calculateBootstrapGrids($columns);
+            $this->itemsPerColumn = $this->arguments['itemsPerColumn'];
+            $this->arguments['columns'] = ceil($itemCount / $this->arguments['itemsPerColumn']);
+            $this->calculateBootstrapGrids($this->arguments['columns']);
         }
 
         $content = '';
         $itemIterator = 0;
-        $newRow = TRUE;
-        $newColumn = TRUE;
-        $firstRow = TRUE;
+        $newRow = true;
+        $newColumn = true;
+        $firstRow = true;
 
 
-        foreach ($each as $item) {
+        foreach ($this->arguments['each'] as $item) {
             if (!$firstRow) {
-                if ($direction === 'vertical') {
+                if ($this->arguments['direction'] === 'vertical') {
                     $newRow = FALSE;
                     $newColumn = $itemIterator % $this->itemsPerColumn === 0 ? TRUE : FALSE;
                 } else {
@@ -73,20 +77,19 @@ class MultiColumnViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractT
                 }
             }
 
-            if ($newColumn && !$firstRow) $content .= sprintf('</%s>', $columnTag);
-            if ($newRow && !$firstRow) $content .= sprintf('</%s>', $rowTag);
+            if ($newColumn && !$firstRow) $content .= sprintf('</%s>', $this->arguments['columnTag']);
+            if ($newRow && !$firstRow) $content .= sprintf('</%s>', $this->arguments['rowTag']);
 
             $this->templateVariableContainer->add('newRow', $newRow);
-            $this->templateVariableContainer->add($as, $item);
+            $this->templateVariableContainer->add($this->arguments['as'], $item);
             $this->templateVariableContainer->add('newColumn', $newColumn);
             $this->templateVariableContainer->add('itemCount', $itemCount);
             $this->templateVariableContainer->add('itemsPerColumn', $this->gridColumns);
             $this->templateVariableContainer->add('gridSpan', $this->gridSpan);
-            $this->templateVariableContainer->add('containerWidth', $this->gridColumns * $columnWidth);
-
+            $this->templateVariableContainer->add('containerWidth', $this->gridColumns * $this->arguments['columnWidth']);
             $content .= $this->renderChildren();
 
-            $this->templateVariableContainer->remove($as);
+            $this->templateVariableContainer->remove($this->arguments['as']);
             $this->templateVariableContainer->remove('itemCount');
             $this->templateVariableContainer->remove('gridSpan');
             $this->templateVariableContainer->remove('containerWidth');
@@ -98,8 +101,8 @@ class MultiColumnViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractT
             $firstRow = FALSE;
         }
 
-        $content .= sprintf('</%s>', $columnTag);
-        $content .= sprintf('</%s>', $rowTag);
+        $content .= sprintf('</%s>', $this->arguments['columnTag']);
+        $content .= sprintf('</%s>', $this->arguments['rowTag']);
 
         return $content;
     }

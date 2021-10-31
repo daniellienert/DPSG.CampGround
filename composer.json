@@ -9,7 +9,6 @@
     "require": {
         "neos/neos": "^5.0",
         "neos/neos-ui": "*",
-        "neos/neos-ui-compiled": "*",
         "dl/gallery": "*",
         "flowpack/cachebuster": "*",
         "jonnitto/prettyembedyoutube": "*"
